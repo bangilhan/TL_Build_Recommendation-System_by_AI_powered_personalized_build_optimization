@@ -2,8 +2,7 @@
   "name": "tl-build-recommendation-system",
   "version": "1.0.0",
   "description": "TL Build Recommendation System - AI-powered personalized build optimization",
-  "main": "character_web_interface.js",
-  "type": "module",
+  "main": "character_web_interface_vercel.js",
   "scripts": {
     "start": "node character_web_interface.js",
     "dev": "node character_web_interface.js",
