@@ -230,16 +230,59 @@ app.get('/', (req, res) => {
             characterInfo.style.display = 'block';
             characterDetails.innerHTML = '<div style="text-align: center; padding: 20px;">캐릭터 정보를 조회하고 있습니다...</div>';
 
-            // 시뮬레이션된 캐릭터 데이터
+            // 시뮬레이션된 캐릭터 데이터 (더 다양한 장비)
+            const classes = ['전사', '마법사', '궁수', '도적', '성기사', '사제'];
+            const selectedClass = classes[Math.floor(Math.random() * classes.length)];
+            
             const mockCharacterData = {
                 server: serverName,
                 name: characterName,
                 level: Math.floor(Math.random() * 20) + 40,
-                class: ['전사', '마법사', '궁수', '도적', '성기사', '사제'][Math.floor(Math.random() * 6)],
+                class: selectedClass,
                 equipment: {
-                    weapon: { itemName: '강철 검', grade: 3, enhancementLevel: 2 },
-                    chest: { itemName: '강철 갑옷', grade: 3, enhancementLevel: 1 },
-                    ring1: { itemName: '공격 반지', grade: 3, enhancementLevel: 0 }
+                    weapon: { 
+                        itemName: selectedClass === '마법사' ? '마법사의 지팡이' : 
+                                 selectedClass === '궁수' ? '정확도 활' : 
+                                 selectedClass === '도적' ? '암살자의 단검' : '강철 검', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: Math.floor(Math.random() * 3) 
+                    },
+                    chest: { 
+                        itemName: selectedClass === '마법사' ? '마법사의 로브' : 
+                                 selectedClass === '도적' ? '암살자의 가죽갑옷' : '강철 갑옷', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: Math.floor(Math.random() * 2) 
+                    },
+                    ring1: { 
+                        itemName: selectedClass === '마법사' ? '마나 반지' : '공격 반지', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: Math.floor(Math.random() * 2) 
+                    },
+                    ring2: { 
+                        itemName: '방어 반지', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: 0 
+                    },
+                    earring1: { 
+                        itemName: '치명타 귀걸이', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: 0 
+                    },
+                    earring2: { 
+                        itemName: '치명타 귀걸이', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: 0 
+                    },
+                    necklace: { 
+                        itemName: '수호의 목걸이', 
+                        grade: Math.floor(Math.random() * 3) + 2, 
+                        enhancementLevel: 0 
+                    },
+                    artifact: { 
+                        itemName: '마법의 구슬', 
+                        grade: Math.floor(Math.random() * 2) + 4, 
+                        enhancementLevel: 0 
+                    }
                 },
                 stats: {
                     strength: Math.floor(Math.random() * 50) + 20,
@@ -262,6 +305,74 @@ app.get('/', (req, res) => {
                     <p><strong>클래스:</strong> \${mockCharacterData.class}</p>
                     <p><strong>마지막 업데이트:</strong> \${new Date(mockCharacterData.lastUpdated).toLocaleString()}</p>
                 </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4>📊 현재 스탯</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                            <div style="font-weight: 600; color: #e74c3c;">힘</div>
+                            <div style="font-size: 1.2em; font-weight: bold;">\${mockCharacterData.stats.strength}</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                            <div style="font-weight: 600; color: #3498db;">체력</div>
+                            <div style="font-size: 1.2em; font-weight: bold;">\${mockCharacterData.stats.constitution}</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                            <div style="font-weight: 600; color: #27ae60;">민첩</div>
+                            <div style="font-size: 1.2em; font-weight: bold;">\${mockCharacterData.stats.dexterity}</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd; text-align: center;">
+                            <div style="font-weight: 600; color: #9b59b6;">지능</div>
+                            <div style="font-size: 1.2em; font-weight: bold;">\${mockCharacterData.stats.intelligence}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4>⚔️ 현재 장비</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 10px;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">무기</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.weapon.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.weapon.grade} (+\${mockCharacterData.equipment.weapon.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">갑옷</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.chest.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.chest.grade} (+\${mockCharacterData.equipment.chest.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">반지1</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.ring1.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.ring1.grade} (+\${mockCharacterData.equipment.ring1.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">반지2</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.ring2.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.ring2.grade} (+\${mockCharacterData.equipment.ring2.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">귀걸이1</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.earring1.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.earring1.grade} (+\${mockCharacterData.equipment.earring1.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">귀걸이2</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.earring2.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.earring2.grade} (+\${mockCharacterData.equipment.earring2.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">목걸이</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.necklace.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.necklace.grade} (+\${mockCharacterData.equipment.necklace.enhancementLevel})</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">아티팩트</div>
+                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.artifact.itemName}</div>
+                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.artifact.grade} (+\${mockCharacterData.equipment.artifact.enhancementLevel})</div>
+                        </div>
+                    </div>
+                </div>
             \`;
         }
 
@@ -283,23 +394,58 @@ app.get('/', (req, res) => {
             recommendationResult.style.display = 'block';
             recommendationContent.innerHTML = '<div style="text-align: center; padding: 20px;">캐릭터 정보를 분석하고 맞춤형 추천을 생성하고 있습니다...</div>';
 
-            // 시뮬레이션된 추천 결과
-            const mockRecommendations = [
-                {
-                    slot: 'weapon',
-                    currentItem: '강철 검',
-                    currentGrade: 3,
-                    recommendedItem: '정확도 검',
-                    improvement: 45
-                },
-                {
-                    slot: 'ring1',
-                    currentItem: '공격 반지',
-                    currentGrade: 3,
-                    recommendedItem: '공격 반지',
-                    improvement: 30
-                }
-            ];
+            // 시뮬레이션된 추천 결과 (사용자 요청에 따라 동적으로 생성)
+            const slotNames = {
+                weapon: '무기',
+                chest: '갑옷',
+                ring1: '반지1',
+                ring2: '반지2',
+                earring1: '귀걸이1',
+                earring2: '귀걸이2',
+                necklace: '목걸이',
+                artifact: '아티팩트'
+            };
+            
+            const itemDatabase = {
+                weapon: ['정확도 검', '속도 검', '파괴의 도끼', '태양의 검', '현자의 지팡이'],
+                chest: ['강철 갑옷', '민첩의 로브', '튼튼한 갑옷', '마법 저항 로브', '수호자의 갑옷'],
+                ring1: ['공격 반지', '방어 반지', '마나 반지', '치명타 반지', '활력의 반지'],
+                ring2: ['공격 반지', '방어 반지', '마나 반지', '치명타 반지', '활력의 반지'],
+                earring1: ['치명타 귀걸이', '마나 귀걸이', '방어 귀걸이', '공격 귀걸이'],
+                earring2: ['치명타 귀걸이', '마나 귀걸이', '방어 귀걸이', '공격 귀걸이'],
+                necklace: ['수호의 목걸이', '마력의 목걸이', '신속의 목걸이', '영웅의 문장'],
+                artifact: ['고대 용의 심장', '마법의 구슬', '그림자의 망토', '신비한 구슬']
+            };
+            
+            // 사용자 요청에 따라 추천 개수 결정
+            let recommendationCount = 2;
+            if (userRequest.includes('어려워') || userRequest.includes('부족해') || userRequest.includes('안돼')) {
+                recommendationCount = 4;
+            } else if (userRequest.includes('많이') || userRequest.includes('완전히')) {
+                recommendationCount = 6;
+            }
+            
+            const mockRecommendations = [];
+            const slots = Object.keys(slotNames);
+            
+            for (let i = 0; i < Math.min(recommendationCount, slots.length); i++) {
+                const slot = slots[i];
+                const currentItem = currentCharacterData.equipment[slot]?.itemName || '기본 아이템';
+                const currentGrade = currentCharacterData.equipment[slot]?.grade || 3;
+                
+                // 같은 슬롯의 다른 아이템 추천
+                const availableItems = itemDatabase[slot] || ['개선된 아이템'];
+                const recommendedItem = availableItems[Math.floor(Math.random() * availableItems.length)];
+                
+                mockRecommendations.push({
+                    slot: slot,
+                    slotName: slotNames[slot],
+                    currentItem: currentItem,
+                    currentGrade: currentGrade,
+                    recommendedItem: recommendedItem,
+                    improvement: Math.floor(Math.random() * 40) + 20 // 20-60점 향상
+                });
+            }
 
             const totalImprovement = mockRecommendations.reduce((sum, rec) => sum + rec.improvement, 0);
             const costSavings = mockRecommendations.reduce((sum, rec) => sum + rec.currentGrade * 1000, 0);
@@ -317,7 +463,7 @@ app.get('/', (req, res) => {
                     <h4>🎯 추천 아이템 목록</h4>
                     \${mockRecommendations.map(rec => \`
                         <div style="background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px; border: 1px solid #ddd;">
-                            <div style="font-size: 1.1em; font-weight: 600; color: #2c3e50; margin-bottom: 10px;">\${rec.slot} 슬롯</div>
+                            <div style="font-size: 1.1em; font-weight: 600; color: #2c3e50; margin-bottom: 10px;">\${rec.slotName} 슬롯</div>
                             <div style="color: #e74c3c; font-weight: 600; margin-bottom: 10px;">
                                 \${rec.currentItem} (등급 \${rec.currentGrade}) → \${rec.recommendedItem}
                             </div>
