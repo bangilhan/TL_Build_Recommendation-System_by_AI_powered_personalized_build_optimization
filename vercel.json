@@ -2,25 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "character_web_interface_vercel.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "src": "api/index.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "character_web_interface_vercel.js"
+      "dest": "api/index.js"
     }
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "character_web_interface_vercel.js": {
-      "maxDuration": 30
-    }
   }
 }
