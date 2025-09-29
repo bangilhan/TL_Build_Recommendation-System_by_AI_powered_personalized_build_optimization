@@ -1,0 +1,60 @@
+[
+  {
+    "name": "T3 Staff/Dagger - twitch.tv/SirDarkys",
+    "url": "RepeatingChestMeditateTwilight",
+    "level": 55,
+    "privacy": "temp",
+    "updatedAt": "2025-09-25T06:02:28.608Z",
+    "createdAt": "2025-09-25T06:02:28.608Z",
+    "desc": "",
+    "id": 1224746,
+    "roleTags": [
+      "dps"
+    ],
+    "user": {},
+    "ratingAmount": 0,
+    "ratingAverage": 0,
+    "publisher": "ags",
+    "folders": []
+  },
+  {
+    "userId": "6a8fbf0c-eb84-4069-b6fa-41c6f794bbf4",
+    "name": "Daniiesc Scorpion PvE public",
+    "url": "ThePeerlessCookOfMana",
+    "level": 55,
+    "privacy": "public",
+    "updatedAt": "2025-09-21T12:42:38.731Z",
+    "createdAt": "2025-06-29T21:18:17.602Z",
+    "desc": "<h3>If you like the build or requested it, please consider giving it <span style=\"color: rgb(242, 221, 146)\">5 stars</span>! 😊</h3><h3><span style=\"color: rgb(85, 198, 119)\">GL &amp; HF</span></h3><p></p><h3><a rel=\"noopener\" data-tooltip-link=\"true\" href=\"https://www.youtube.com/@Daniiesc\" target=\"_blank\"><u>https://www.youtube.com/@Daniiesc</u></a></h3><p></p><h3><span style=\"color: rgb(242, 221, 146)\">I will update with PvE T3 build once I think I found out the correct build! </span></h3><h3><span style=\"color: rgb(242, 221, 146)\">Please be patient, I will need to do a lot of theorycrafting with all the new items and mastery skills!</span></h3><p></p><h3>Special thanks to <span style=\"color: rgb(101, 176, 252)\">TayZeur </span>for the reviews, suggestions, and discussions about the overall build!</h3><hr><h3>Daniiesc's Scorpion skill rotation guide for bosses</h3><p></p><h3><span style=\"color: rgb(245, 101, 101)\">Off-hand guide below!</span></h3><p></p><h4>General</h4><blockquote><p>Always use dagger (faster, higher dmg basic attacks) as main hand weapon, unless mech needs you to keep distance from the boss, swap to xbow main hand for that period</p><p>Use <strong>Umbral Spirit</strong> for Bellandir xbow, <strong>Thunder Spirit </strong>for any other xbow</p><p>Use <strong>Cleaving Moonlight</strong> only once, to get the attack speed buff while Consecutive Use is active</p><p>Within the duration of <strong>Selfless Diffusion</strong> always watch if your first <strong>Detonation Mark</strong> has 2 stacks or not, if not try to use <strong>Detonation Mark</strong> ASAP to have the 2 stacks</p><p>Within the duration of <strong>Selfless Diffusion</strong> the goal is to use <strong>Thundering Bomb</strong> on 20 Thunderclouds stacks AS MUCH AS POSSIBLE</p><p>Try to use <strong>Mana Exchange</strong> whenever it's up to sustain mana consumption</p><p>Keep <strong>Mother Nature's Protest</strong> always on, watch out to turn it back on if your mana drops so low that it turns off automatically</p><p>Use <strong>Weak Point Shot</strong> whenever the boss does Fury or Wrath attack (when you need to block or roll). To get the buff, use it before OR right after the block (if you are close to the boss). Try to position yourself to the back of the boss, to have 24% crit dmg instead of 21%.</p><p><span style=\"color: oklab(0.952331 0.000418991 -0.00125992)\">In my opinion using <strong>Nimble Leap</strong> is not worth regardless the extra crit dmg buff for a short duration. <strong>Nimble Leap</strong> cancelling all melee autos in the meantime (talkin about milliseconds) which will cause noticeable worse cooldowns while <strong>Selfless Diffusion</strong> is active.</span></p><p>Mastery skills:</p><img src=\"https://user-content.questlog.gg/6a8fbf0c-eb84-4069-b6fa-41c6f794bbf4/2/52b6bd31-7d01-4310-bef7-1a86a7c6c86c.webp\"></blockquote><p></p><h4>Within the duration of Selfless Diffusion</h4><blockquote><p>Use buffs: <strong>Lightning Infusion &gt; Umbral Spirit/Thunder Spirit &gt; Selfless Diffusion</strong></p><p>Keep the <strong>Cleaving Moonlight</strong> Consecutive Use activated</p><p>Use <strong>Quick Fire</strong> to stack up Thunderclouds</p><p>Use <strong>Thundering Bomb</strong> when you have 20 Thundercloud stacks</p><p>Use <strong>Knife Throwing</strong> to reduce your cooldowns</p><blockquote><p><strong>Lightning Infusion &gt; Umbral Spirit/Thunder Spirit &gt; Selfless Diffusion &gt; Fatal Stigma &gt; Detonation Mark &gt; Cleaving Moonlight &gt; Quick Fire &gt; Lightning Infusion &gt; Thundering Bomb &gt; Knife Throwing &gt; Quick Fire &gt; Thundering Bomb &gt; Cleaving Moonlight &gt; Quick Fire &gt; Thundering Bomb &gt; Knife Throwing &gt; Quick Fire &gt; Thundering Bomb</strong></p></blockquote></blockquote><p></p><h4>When Selfless Diffusion cooldown is higher than 5 sec</h4><blockquote><p>When <strong>Selfless Diffusion</strong> cooldown is LESS than 5 sec, <strong>DO NOT</strong> use <strong>Knife Throwing</strong></p><p>Don't use <strong>Umbral Spirit/Thunder Spirit</strong></p><p>Use <strong>Lightning Infusion</strong></p><p>Use <strong>Detonation Mark</strong> only if your <strong>Thundering Bomb</strong> is NOT on cooldown</p><p>Prioritize <strong>Thundering Bomb</strong> usage on <strong>Detonation Mark</strong></p><p>Keep the <strong>Cleaving Moonlight</strong> Consecutive Use activated</p><p>Use <strong>Quick Fire</strong> to stack up Thunderclouds after using <strong>Thundering Bomb</strong></p><p>Use <strong>Thundering Bomb</strong> when you have 20 Thundercloud stacks</p><blockquote><p><strong>Lightning Infusion &gt; Fatal Stigma &gt; Detonation Mark &gt; Cleaving Moonlight &gt; Quick Fire &gt; Thundering Bomb</strong></p></blockquote></blockquote><p></p><h3><span style=\"color: rgb(245, 101, 101)\">Updated Rotation Note (Ankle Strike over Fatal Stigma)</span></h3><blockquote><p>A more optimized rotation replaces <strong>Fatal Stigma</strong> with <strong>Ankle Strike</strong>. With specialization, casting <strong>Ankle Strike</strong> grants <strong>off-hand attack chance</strong>. If <strong>Ankle Strike</strong> <strong>procs an off-hand hit</strong>, it applies the buff <strong>a second time</strong>, effectively <strong>doubling the off-hand attack chance</strong> coming from <strong>Ankle Strike</strong> for a short duration.</p><p>This pairs extremely well with <strong>Selfless Diffusion</strong> and <strong>Off-hand Frenzy</strong> (after using <strong>Cleaving Moonlight</strong>), since more off-hand procs = faster cooldowns.</p><p>With an off-hand-focused build, you can reach <strong>95.58% off-hand attack chance</strong> for a short window.</p><p>Keep in mind, it is hard to maintain the high <em>off-hand attack chance </em>due to short duration of buffs.</p><ul><li><p><strong>Ankle Strike buff</strong>: 3s</p></li><li><p><strong>Off-hand Frenzy</strong>: 2s</p></li></ul><p>⚠️ <strong>Important</strong>: If you use low-impact skills during this short window, your DPS may drop below what you would get using <strong>Fatal Stigma</strong>.</p><h4>New Optimized Rotation:</h4><blockquote><p><strong>Lightning Infusion &gt; Thunder Spirit &gt; Selfless Diffusion &gt; Detonation Mark &gt; Ankle Strike &gt; Cleaving Moonlight &gt; Quick Fire &gt; Lightning Infusion &gt; Thundering Bomb &gt; Knife Throwing &gt; Quick Fire &gt; Thundering Bomb &gt; Cleaving Moonlight &gt; Quick Fire &gt; Thundering Bomb &gt; Knife Throwing &gt; Quick Fire &gt; Thundering Bomb &gt; Ankle Strike &gt; ...</strong></p></blockquote></blockquote><p></p><img src=\"https://user-content.questlog.gg/6a8fbf0c-eb84-4069-b6fa-41c6f794bbf4/2/5f1979a3-218f-4d1c-a88b-6ae45125bceb.webp\">",
+    "id": 1129111,
+    "roleTags": [
+      "dps"
+    ],
+    "user": {
+      "id": "6a8fbf0c-eb84-4069-b6fa-41c6f794bbf4",
+      "slug": "g1L4wbt1k1Y7",
+      "image": "https://cdn.discordapp.com/embed/avatars/0.png",
+      "name": "daniiesc",
+      "level": 10
+    },
+    "ratingAmount": 54,
+    "ratingAverage": 4.888888888888889,
+    "publisher": "ags",
+    "folders": [
+      {
+        "id": 78856888,
+        "name": "Non-heroic old build below",
+        "note": "",
+        "color": "red",
+        "order": 9000
+      },
+      {
+        "id": 579850284,
+        "name": "Heroic | still testing",
+        "note": "",
+        "color": "orange",
+        "order": 1000
+      }
+    ]
+  }
+]

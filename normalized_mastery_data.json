@@ -1,0 +1,4860 @@
+{
+  "statIdMapping": {
+    "125": "마나 소모량",
+    "126": "치명타 확률",
+    "128": "물리 공격력",
+    "129": "마법 공격력",
+    "130": "원거리 공격력",
+    "131": "물리 공격력",
+    "132": "마법 공격력",
+    "133": "원거리 공격력",
+    "134": "물리 공격력",
+    "135": "마법 공격력",
+    "136": "원거리 공격력",
+    "137": "물리 공격력",
+    "138": "마법 공격력",
+    "139": "원거리 공격력",
+    "140": "물리 공격력",
+    "141": "마법 공격력",
+    "142": "원거리 공격력",
+    "143": "공격력 (주무기)",
+    "144": "공격력 (보조무기)",
+    "145": "공격력 (원거리)",
+    "146": "물리 방어력",
+    "147": "마법 방어력",
+    "148": "원거리 방어력",
+    "149": "물리 방어력",
+    "150": "마법 방어력",
+    "151": "원거리 방어력",
+    "152": "물리 방어력",
+    "153": "마법 방어력",
+    "154": "원거리 방어력",
+    "155": "힘 (STR)",
+    "156": "체력 (CON)",
+    "157": "민첩 (DEX)",
+    "158": "지각 (PER)",
+    "159": "정신력 (SPI)",
+    "160": "지능 (INT)",
+    "161": "지능 (INT)",
+    "162": "지능 (INT)",
+    "163": "마나",
+    "164": "체력",
+    "165": "체력",
+    "166": "체력",
+    "167": "체력",
+    "168": "체력",
+    "169": "체력",
+    "170": "체력",
+    "171": "체력",
+    "172": "체력",
+    "173": "체력",
+    "174": "체력",
+    "175": "체력",
+    "176": "체력",
+    "177": "체력",
+    "178": "체력",
+    "179": "체력",
+    "203": "마나 소모량",
+    "204": "쿨다운 감소",
+    "205": "이동속도",
+    "206": "공격속도",
+    "207": "시전속도",
+    "208": "회피율",
+    "209": "차단율",
+    "210": "치명타 피해",
+    "211": "치명타 확률",
+    "212": "치명타 피해",
+    "213": "치명타 확률",
+    "214": "치명타 피해",
+    "215": "치명타 확률",
+    "216": "치명타 피해",
+    "217": "치명타 확률",
+    "218": "치명타 피해",
+    "219": "치명타 확률",
+    "220": "치명타 피해",
+    "221": "치명타 확률",
+    "222": "치명타 피해",
+    "223": "치명타 확률",
+    "224": "치명타 피해",
+    "225": "치명타 확률",
+    "226": "치명타 피해",
+    "227": "치명타 확률",
+    "228": "치명타 피해",
+    "229": "치명타 확률",
+    "230": "치명타 피해",
+    "231": "치명타 확률",
+    "232": "치명타 피해",
+    "233": "치명타 확률",
+    "234": "치명타 피해",
+    "235": "치명타 확률",
+    "236": "치명타 피해",
+    "237": "치명타 확률",
+    "238": "치명타 피해",
+    "239": "치명타 확률",
+    "240": "치명타 피해",
+    "241": "치명타 확률",
+    "242": "치명타 피해",
+    "243": "치명타 확률",
+    "244": "치명타 피해",
+    "245": "치명타 확률",
+    "246": "치명타 피해",
+    "247": "치명타 확률",
+    "248": "치명타 피해",
+    "249": "치명타 확률",
+    "250": "치명타 피해",
+    "251": "치명타 확률",
+    "252": "치명타 피해",
+    "253": "치명타 확률",
+    "254": "치명타 피해",
+    "255": "치명타 확률",
+    "256": "치명타 피해",
+    "257": "치명타 확률",
+    "258": "치명타 피해",
+    "259": "치명타 확률",
+    "260": "치명타 피해",
+    "261": "치명타 확률",
+    "262": "치명타 피해",
+    "263": "치명타 확률",
+    "264": "치명타 피해",
+    "265": "치명타 확률",
+    "266": "치명타 피해",
+    "267": "치명타 확률",
+    "268": "치명타 피해",
+    "269": "치명타 확률",
+    "270": "치명타 피해",
+    "271": "치명타 확률",
+    "272": "치명타 피해",
+    "273": "치명타 확률",
+    "274": "치명타 피해",
+    "275": "치명타 확률",
+    "276": "치명타 피해",
+    "277": "치명타 확률",
+    "278": "치명타 피해",
+    "279": "치명타 확률",
+    "280": "치명타 피해",
+    "281": "치명타 확률",
+    "282": "치명타 피해",
+    "283": "치명타 확률",
+    "284": "치명타 피해",
+    "285": "치명타 확률",
+    "286": "치명타 피해",
+    "287": "치명타 확률",
+    "288": "치명타 피해",
+    "289": "치명타 확률",
+    "290": "치명타 피해",
+    "291": "치명타 확률",
+    "292": "치명타 피해",
+    "293": "치명타 확률",
+    "294": "치명타 피해",
+    "295": "치명타 확률",
+    "296": "치명타 피해",
+    "297": "치명타 확률",
+    "298": "치명타 피해",
+    "299": "치명타 확률",
+    "300": "치명타 피해"
+  },
+  "buildTypeMapping": {
+    "1": "PvE",
+    "2": "PvP",
+    "3": "던전",
+    "4": "레이드",
+    "5": "공성",
+    "6": "월드 보스",
+    "7": "일반"
+  },
+  "weaponMapping": {
+    "greatsword": "양손검",
+    "sword": "장검",
+    "dagger": "단검",
+    "crossbow": "석궁",
+    "bow": "장궁",
+    "staff": "지팡이",
+    "wand": "마법봉",
+    "spear": "창",
+    "orb": "마력구"
+  },
+  "itemDatabase": [
+    {
+      "item_id": "15000001",
+      "name": "솔란트",
+      "grade": 1,
+      "icon": "icon/item_128/etc/ico_adena",
+      "category": "화폐",
+      "type": "currency",
+      "description": "솔란트 (일반 등급 1)",
+      "cost_info": {
+        "base_value": 1000,
+        "market_value": 1200,
+        "crafting_cost": 800
+      },
+      "rarity": "common"
+    },
+    {
+      "item_id": "1720158770",
+      "name": "진귀한 마린드 원석",
+      "grade": 5,
+      "icon": "icon/item_128/usable/i_skillgrowth_polymorph_sapphire_004_raw",
+      "category": "원석",
+      "type": "enhancement_stone",
+      "description": "진귀한 마린드 원석 (희귀 등급 5)",
+      "cost_info": {
+        "base_value": 16000,
+        "market_value": 19200,
+        "crafting_cost": 12800
+      },
+      "rarity": "rare"
+    },
+    {
+      "item_id": "1720158775",
+      "name": "진귀한 엠머렛 원석",
+      "grade": 5,
+      "icon": "icon/item_128/usable/i_skillgrowth_polymorph_emerald_004_raw",
+      "category": "원석",
+      "type": "enhancement_stone",
+      "description": "진귀한 엠머렛 원석 (희귀 등급 5)",
+      "cost_info": {
+        "base_value": 16000,
+        "market_value": 19200,
+        "crafting_cost": 12800
+      },
+      "rarity": "rare"
+    },
+    {
+      "item_id": "1720158780",
+      "name": "진귀한 루빅스 원석",
+      "grade": 5,
+      "icon": "icon/item_128/usable/i_skillgrowth_polymorph_ruby_004_raw",
+      "category": "원석",
+      "type": "enhancement_stone",
+      "description": "진귀한 루빅스 원석 (희귀 등급 5)",
+      "cost_info": {
+        "base_value": 16000,
+        "market_value": 19200,
+        "crafting_cost": 12800
+      },
+      "rarity": "rare"
+    },
+    {
+      "item_id": "1720158785",
+      "name": "진귀한 스타론 원석",
+      "grade": 5,
+      "icon": "icon/item_128/usable/i_skillgrowth_polymorph_topaz_004_raw",
+      "category": "원석",
+      "type": "enhancement_stone",
+      "description": "진귀한 스타론 원석 (희귀 등급 5)",
+      "cost_info": {
+        "base_value": 16000,
+        "market_value": 19200,
+        "crafting_cost": 12800
+      },
+      "rarity": "rare"
+    }
+  ],
+  "nodeDatabase": [
+    {
+      "node_id": "10001",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10001",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10002",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10002",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10003",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10003",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10004",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10004",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10005",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10005",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10006",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10006",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10007",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10007",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10008",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10008",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10009",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10009",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10010",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10010",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10011",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10011",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10012",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10012",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10013",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10013",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10014",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10014",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10015",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10015",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10016",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10016",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10017",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10017",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10018",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10018",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10019",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10019",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10020",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10020",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10021",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10021",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10022",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10022",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10023",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10023",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10024",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10024",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10025",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10025",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10026",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10026",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10027",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10027",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10028",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10028",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10029",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10029",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10030",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10030",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10031",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10031",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10032",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10032",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10033",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10033",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10034",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10034",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10035",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10035",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10036",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10036",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10037",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10037",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10038",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10038",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10039",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10039",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10040",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10040",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10041",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10041",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10042",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10042",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10043",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10043",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10044",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10044",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10045",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10045",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10046",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10046",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10047",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10047",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10048",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10048",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10049",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10049",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10050",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10050",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10051",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10051",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10052",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10052",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10053",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10053",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10054",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10054",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10055",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10055",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10056",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10056",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10057",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10057",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10058",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10058",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10059",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10059",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10060",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10060",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10061",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10061",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10062",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10062",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10063",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10063",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10064",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10064",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10065",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10065",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10066",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10066",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10067",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10067",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10068",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10068",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10069",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10069",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10070",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10070",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10071",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10071",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10072",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10072",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10073",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10073",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10074",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10074",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10075",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10075",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10076",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10076",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10077",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10077",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10078",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10078",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10079",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10079",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10080",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10080",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10081",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10081",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10082",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10082",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10083",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10083",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10084",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10084",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10085",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10085",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10086",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10086",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10087",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10087",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10088",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10088",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10089",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10089",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10090",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10090",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10091",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10091",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10092",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10092",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10093",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10093",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10094",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10094",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10095",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10095",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10096",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10096",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10097",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10097",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10098",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10098",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10099",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10099",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10100",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10100",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10101",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10101",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10102",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10102",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10103",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10103",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10104",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10104",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10105",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10105",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10106",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10106",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10107",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10107",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10108",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10108",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10109",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10109",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10110",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10110",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10111",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10111",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10112",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10112",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10113",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10113",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10114",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10114",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10115",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10115",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10116",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10116",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10117",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10117",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10118",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10118",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10119",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10119",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10120",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10120",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10121",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10121",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10122",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10122",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10123",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10123",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10124",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10124",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10125",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10125",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10126",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10126",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10127",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10127",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10128",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10128",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10129",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10129",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10130",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10130",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10131",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10131",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10132",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10132",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10133",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10133",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10134",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10134",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10135",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10135",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10136",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10136",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10137",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10137",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10138",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10138",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10139",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10139",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10140",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10140",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10141",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10141",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10142",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10142",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10143",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10143",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10144",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10144",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10145",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10145",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10146",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10146",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10147",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10147",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10148",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10148",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10149",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10149",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10150",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10150",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10151",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10151",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10152",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10152",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10153",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10153",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10154",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10154",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10155",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10155",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10156",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10156",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10157",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10157",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10158",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10158",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10159",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10159",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10160",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10160",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10161",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10161",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10162",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10162",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10163",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10163",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10164",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10164",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10165",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10165",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10166",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10166",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10167",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10167",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10168",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10168",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10169",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10169",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10170",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10170",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10171",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10171",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10172",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10172",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10173",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10173",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10174",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10174",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10175",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10175",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10176",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10176",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10177",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10177",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10178",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10178",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10179",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10179",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10180",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10180",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10181",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10181",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10182",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10182",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10183",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10183",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10184",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10184",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10185",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10185",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10186",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10186",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10187",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10187",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10188",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10188",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10189",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10189",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10190",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10190",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10191",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10191",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10192",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10192",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10193",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10193",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10194",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10194",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10195",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10195",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10196",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10196",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10197",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10197",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10198",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10198",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10199",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10199",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10200",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10200",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10201",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10201",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10202",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10202",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10203",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10203",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10204",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10204",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10205",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10205",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10206",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10206",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10207",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10207",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10208",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10208",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10209",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10209",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10210",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10210",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10211",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10211",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10212",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10212",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10213",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10213",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10214",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10214",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10215",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10215",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10216",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10216",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10217",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10217",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10218",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10218",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10219",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10219",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10220",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10220",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10221",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10221",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10222",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10222",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10223",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10223",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10224",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10224",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10225",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10225",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10226",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10226",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10227",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10227",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10228",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10228",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10229",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10229",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10230",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10230",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10231",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10231",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10232",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10232",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10233",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10233",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10234",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10234",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10235",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10235",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10236",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10236",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10237",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10237",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10238",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10238",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10239",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10239",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10240",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10240",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10241",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10241",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10242",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10242",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10243",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10243",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10244",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10244",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10245",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10245",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10246",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10246",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10247",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10247",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10248",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10248",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10249",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10249",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10250",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10250",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10251",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10251",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10252",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10252",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10253",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10253",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10254",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10254",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10255",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10255",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10256",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10256",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10257",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10257",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10258",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10258",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10259",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10259",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10260",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10260",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10261",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10261",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10262",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10262",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10263",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10263",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10264",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10264",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10265",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10265",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10266",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10266",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10267",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10267",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10268",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10268",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10269",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10269",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10270",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10270",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10271",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10271",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10272",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10272",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10273",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10273",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10274",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10274",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10275",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10275",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10276",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10276",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10277",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10277",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10278",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10278",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10279",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10279",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10280",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10280",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10281",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10281",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10282",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10282",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10283",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10283",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10284",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10284",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10285",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10285",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10286",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10286",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10287",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10287",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10288",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10288",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10289",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10289",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10290",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10290",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10291",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10291",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10292",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10292",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10293",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10293",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10294",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10294",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10295",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10295",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10296",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10296",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10297",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10297",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10298",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10298",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10299",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10299",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10300",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10300",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10301",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10301",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10302",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10302",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10303",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10303",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10304",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10304",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10305",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10305",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10306",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10306",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10307",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10307",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10308",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10308",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10309",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10309",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10310",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10310",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10311",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10311",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10312",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10312",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10313",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10313",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10314",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10314",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10315",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10315",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10316",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10316",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10317",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10317",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10318",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10318",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10319",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10319",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10320",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10320",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10321",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10321",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10322",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10322",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10323",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10323",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10324",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10324",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10325",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10325",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10326",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10326",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10327",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10327",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10328",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10328",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10329",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10329",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10330",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10330",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10331",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10331",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10332",
+      "required_items": {
+        "15000001": 500
+      },
+      "total_cost": 500,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10332",
+      "difficulty": "trivial"
+    },
+    {
+      "node_id": "10333",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10333",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10334",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10334",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10335",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10335",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10336",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10336",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10337",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10337",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10338",
+      "required_items": {
+        "15000001": 160000,
+        "1720158775": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10338",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10339",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10339",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10340",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10340",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10341",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158785": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10341",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10342",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10342",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10343",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10343",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10344",
+      "required_items": {
+        "15000001": 160000,
+        "1720158770": 3,
+        "1720158780": 3
+      },
+      "total_cost": 160006,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10344",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10345",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10345",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10346",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10346",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10347",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10347",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10348",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10348",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10349",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10349",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10350",
+      "required_items": {
+        "15000001": 550000,
+        "1720158775": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10350",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10351",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10351",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10352",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10352",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10353",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158785": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10353",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10354",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10354",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10355",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10355",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10356",
+      "required_items": {
+        "15000001": 550000,
+        "1720158770": 10,
+        "1720158780": 10
+      },
+      "total_cost": 550020,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10356",
+      "difficulty": "hard"
+    },
+    {
+      "node_id": "10357",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10357",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10358",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158775": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10358",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10359",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158785": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10359",
+      "difficulty": "extreme"
+    },
+    {
+      "node_id": "10360",
+      "required_items": {
+        "15000001": 5830000,
+        "1720158770": 90,
+        "1720158780": 90
+      },
+      "total_cost": 5830180,
+      "category": "기본",
+      "tier": 1,
+      "description": "마스터리 노드 10360",
+      "difficulty": "extreme"
+    }
+  ],
+  "masterySystem": {
+    "totalItems": 5,
+    "totalNodes": 360,
+    "buildTypes": [
+      {
+        "id": "build_type_1",
+        "value": "1",
+        "checked": true,
+        "name": "build_type"
+      },
+      {
+        "id": "build_type_2",
+        "value": "2",
+        "checked": false,
+        "name": "build_type"
+      },
+      {
+        "id": "build_type_3",
+        "value": "3",
+        "checked": false,
+        "name": "build_type"
+      },
+      {
+        "id": "build_type_4",
+        "value": "4",
+        "checked": false,
+        "name": "build_type"
+      },
+      {
+        "id": "build_type_5",
+        "value": "5",
+        "checked": false,
+        "name": "build_type"
+      },
+      {
+        "id": "build_type_6",
+        "value": "6",
+        "checked": false,
+        "name": "build_type"
+      },
+      {
+        "id": "build_type_7",
+        "value": "7",
+        "checked": false,
+        "name": "build_type"
+      }
+    ],
+    "canvasInfo": {
+      "width": 660,
+      "height": 798,
+      "className": "",
+      "id": "",
+      "style": "padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 660px; height: 798px; display: block;"
+    },
+    "formData": {
+      "buildTitle": {
+        "name": "build_name",
+        "value": "",
+        "placeholder": "빌드에 멋진 제목을 부여하세요!"
+      },
+      "action": "https://tlcodex.com/kr/search/",
+      "method": "post",
+      "className": "form-inline my-2",
+      "buttons": [
+        {
+          "type": "button",
+          "text": "",
+          "className": "navbar-toggler",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "",
+          "className": "btn-close",
+          "id": ""
+        },
+        {
+          "type": "submit",
+          "text": "",
+          "className": "d-none",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "로그인",
+          "className": "btn btn-primary btn-gradient btn navbar-btn mt-2 ms-2",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "",
+          "className": "btn-close",
+          "id": ""
+        },
+        {
+          "type": "submit",
+          "text": "로그인",
+          "className": "btn btn-success btn-gradient",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "빌드 저장!",
+          "className": "btn btn-primary btn-gradient ms-5",
+          "id": "save_build"
+        },
+        {
+          "type": "button",
+          "text": "복사",
+          "className": "btn btn-gradient btn-success copy",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "",
+          "className": "btn-close",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "",
+          "className": "btn-close",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "text": "",
+          "className": "btn-close",
+          "id": ""
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "totalItems": 5,
+    "totalNodes": 360,
+    "totalStats": 152,
+    "buildTypes": 7,
+    "weapons": 9,
+    "normalizedAt": "2025-09-26T09:32:03.034Z"
+  }
+}

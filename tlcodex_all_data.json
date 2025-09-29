@@ -1,0 +1,928 @@
+{
+  "weapons": [
+    {
+      "id": "item--1741582256",
+      "name": "혼돈 마녀의 도륙날",
+      "href": "https://tlcodex.com/kr/item/1741582256/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753883",
+      "name": "코완주키의 암야도",
+      "href": "https://tlcodex.com/kr/item/1752753883/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753882",
+      "name": "마인제로크의 지옥도",
+      "href": "https://tlcodex.com/kr/item/1752753882/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753880",
+      "name": "고대마수의 암골도",
+      "href": "https://tlcodex.com/kr/item/1752753880/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10082027",
+      "name": "코완주키의 황혼도",
+      "href": "https://tlcodex.com/kr/item/10082027/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1748237292",
+      "name": "테벤트의 광성도",
+      "href": "https://tlcodex.com/kr/item/1748237292/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10082046",
+      "name": "테벤트의 학살도",
+      "href": "https://tlcodex.com/kr/item/10082046/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753879",
+      "name": "저항군 친위대 단검",
+      "href": "https://tlcodex.com/kr/item/1752753879/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10082026",
+      "name": "마인제로크의 단검",
+      "href": "https://tlcodex.com/kr/item/10082026/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1719914103",
+      "name": "검은 모루 칼가시",
+      "href": "https://tlcodex.com/kr/item/1719914103/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753878",
+      "name": "아즈라엘의 망령검",
+      "href": "https://tlcodex.com/kr/item/1752753878/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1741582255",
+      "name": "혼돈 마녀의 사성검",
+      "href": "https://tlcodex.com/kr/item/1741582255/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10092019",
+      "name": "연옥의 즉살참",
+      "href": "https://tlcodex.com/kr/item/10092019/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1713860474",
+      "name": "데이곤의 돌풍검",
+      "href": "https://tlcodex.com/kr/item/1713860474/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753876",
+      "name": "코넬루스의 폭열검",
+      "href": "https://tlcodex.com/kr/item/1752753876/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10092024",
+      "name": "고행기사의 섬멸도",
+      "href": "https://tlcodex.com/kr/item/10092024/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10092027",
+      "name": "아즈라엘의 악검",
+      "href": "https://tlcodex.com/kr/item/10092027/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753875",
+      "name": "케르노보그의 화형검",
+      "href": "https://tlcodex.com/kr/item/1752753875/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753873",
+      "name": "고대마수의 상아검",
+      "href": "https://tlcodex.com/kr/item/1752753873/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753877",
+      "name": "니르마의 수라검",
+      "href": "https://tlcodex.com/kr/item/1752753877/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1741582259",
+      "name": "혼돈 마녀의 탐미봉",
+      "href": "https://tlcodex.com/kr/item/1741582259/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753897",
+      "name": "아리두스의 차원봉",
+      "href": "https://tlcodex.com/kr/item/1752753897/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753894",
+      "name": "마녀 숭배자의 흑월봉",
+      "href": "https://tlcodex.com/kr/item/1752753894/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753896",
+      "name": "탈루스의 재앙봉",
+      "href": "https://tlcodex.com/kr/item/1752753896/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10062047",
+      "name": "델루즈 노아의 얼음목",
+      "href": "https://tlcodex.com/kr/item/10062047/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1748237291",
+      "name": "퀸 블렌디의 광성봉",
+      "href": "https://tlcodex.com/kr/item/1748237291/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753893",
+      "name": "저항군 친위대 지팡이",
+      "href": "https://tlcodex.com/kr/item/1752753893/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10062035",
+      "name": "퀸 블렌디의 지배봉",
+      "href": "https://tlcodex.com/kr/item/10062035/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1713860467",
+      "name": "그라이아이의 뇌운목",
+      "href": "https://tlcodex.com/kr/item/1713860467/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10062029",
+      "name": "데이곤의 화염목",
+      "href": "https://tlcodex.com/kr/item/10062029/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753887",
+      "name": "말라카의 척살궁",
+      "href": "https://tlcodex.com/kr/item/1752753887/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1741582257",
+      "name": "혼돈 마녀의 절멸궁",
+      "href": "https://tlcodex.com/kr/item/1741582257/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753888",
+      "name": "코완주키의 칼날궁",
+      "href": "https://tlcodex.com/kr/item/1752753888/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10052017",
+      "name": "밤표범의 포효궁",
+      "href": "https://tlcodex.com/kr/item/10052017/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1719914104",
+      "name": "검은 모루 난사궁",
+      "href": "https://tlcodex.com/kr/item/1719914104/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753884",
+      "name": "저항군 친위대 석궁",
+      "href": "https://tlcodex.com/kr/item/1752753884/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1748237290",
+      "name": "퀸 블렌디의 광성궁",
+      "href": "https://tlcodex.com/kr/item/1748237290/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10052047",
+      "name": "자이언트 브룩의 지배궁",
+      "href": "https://tlcodex.com/kr/item/10052047/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753885",
+      "name": "은백사신의 사형궁",
+      "href": "https://tlcodex.com/kr/item/1752753885/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10052029",
+      "name": "아크만의 파열궁",
+      "href": "https://tlcodex.com/kr/item/10052029/",
+      "grade": "6",
+      "category": "unknown"
+    }
+  ],
+  "armor": [
+    {
+      "id": "item--1741582262",
+      "name": "검은 날개의 저주투구",
+      "href": "https://tlcodex.com/kr/item/1741582262/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753807",
+      "name": "저항군 친위대 수성면갑",
+      "href": "https://tlcodex.com/kr/item/1752753807/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753827",
+      "name": "철벽 수호자의 기사면갑",
+      "href": "https://tlcodex.com/kr/item/1752753827/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753832",
+      "name": "잊혀진 왕의 강철투구",
+      "href": "https://tlcodex.com/kr/item/1752753832/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753812",
+      "name": "저항군 친위대 습격두건",
+      "href": "https://tlcodex.com/kr/item/1752753812/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753837",
+      "name": "마수 사냥꾼의 추적복면",
+      "href": "https://tlcodex.com/kr/item/1752753837/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753842",
+      "name": "피의 기사단 암살후드",
+      "href": "https://tlcodex.com/kr/item/1752753842/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753847",
+      "name": "일섬의 학살복면",
+      "href": "https://tlcodex.com/kr/item/1752753847/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753822",
+      "name": "저항군 친위대 전략모자",
+      "href": "https://tlcodex.com/kr/item/1752753822/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753852",
+      "name": "월야의 별빛후드",
+      "href": "https://tlcodex.com/kr/item/1752753852/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1711458632",
+      "name": "성령투사의 헌신갑옷",
+      "href": "https://tlcodex.com/kr/item/1711458632/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1741582263",
+      "name": "검은 날개의 회한갑옷",
+      "href": "https://tlcodex.com/kr/item/1741582263/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753808",
+      "name": "저항군 친위대 수성갑옷",
+      "href": "https://tlcodex.com/kr/item/1752753808/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753828",
+      "name": "철벽 수호자의 용맹갑옷",
+      "href": "https://tlcodex.com/kr/item/1752753828/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753833",
+      "name": "잊혀진 왕의 전투갑주",
+      "href": "https://tlcodex.com/kr/item/1752753833/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753813",
+      "name": "저항군 친위대 습격갑옷",
+      "href": "https://tlcodex.com/kr/item/1752753813/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753838",
+      "name": "마수 사냥꾼의 창천갑옷",
+      "href": "https://tlcodex.com/kr/item/1752753838/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753843",
+      "name": "피의 기사단 순혈갑옷",
+      "href": "https://tlcodex.com/kr/item/1752753843/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752753848",
+      "name": "일섬의 관통갑옷",
+      "href": "https://tlcodex.com/kr/item/1752753848/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--10522024",
+      "name": "성전사의 신성갑옷",
+      "href": "https://tlcodex.com/kr/item/10522024/",
+      "grade": "5",
+      "category": "unknown"
+    }
+  ],
+  "accessories": [
+    {
+      "id": "item--1741582268",
+      "name": "기만의 비명 목걸이",
+      "href": "https://tlcodex.com/kr/item/1741582268/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727859253",
+      "name": "영원불꽃의 목걸이",
+      "href": "https://tlcodex.com/kr/item/1727859253/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1750146076",
+      "name": "굳센 영원불꽃의 목걸이",
+      "href": "https://tlcodex.com/kr/item/1750146076/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159262",
+      "name": "심연의 숨결",
+      "href": "https://tlcodex.com/kr/item/1753159262/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159263",
+      "name": "집착의 구속 목걸이",
+      "href": "https://tlcodex.com/kr/item/1753159263/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159264",
+      "name": "빛의 속삭임 목걸이",
+      "href": "https://tlcodex.com/kr/item/1753159264/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159265",
+      "name": "탐욕의 속임수 목걸이",
+      "href": "https://tlcodex.com/kr/item/1753159265/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159266",
+      "name": "숲의 숨결 목걸이",
+      "href": "https://tlcodex.com/kr/item/1753159266/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1754545172",
+      "name": "찬란한 창공의 목걸이",
+      "href": "https://tlcodex.com/kr/item/1754545172/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1754545173",
+      "name": "그을린 초승달 목걸이",
+      "href": "https://tlcodex.com/kr/item/1754545173/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1741582270",
+      "name": "집착의 비명 고리",
+      "href": "https://tlcodex.com/kr/item/1741582270/",
+      "grade": "8",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159267",
+      "name": "심연의 언약",
+      "href": "https://tlcodex.com/kr/item/1753159267/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159268",
+      "name": "백야의 사신 반지",
+      "href": "https://tlcodex.com/kr/item/1753159268/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159269",
+      "name": "영원의 악몽 반지",
+      "href": "https://tlcodex.com/kr/item/1753159269/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159270",
+      "name": "황혼의 인연 반지",
+      "href": "https://tlcodex.com/kr/item/1753159270/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159271",
+      "name": "신의 진노 반지",
+      "href": "https://tlcodex.com/kr/item/1753159271/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159272",
+      "name": "그림자 맹세 반지",
+      "href": "https://tlcodex.com/kr/item/1753159272/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159273",
+      "name": "생명의 나선 반지",
+      "href": "https://tlcodex.com/kr/item/1753159273/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159274",
+      "name": "대지의 인연 반지",
+      "href": "https://tlcodex.com/kr/item/1753159274/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1753159275",
+      "name": "고통의 쐐기 반지",
+      "href": "https://tlcodex.com/kr/item/1753159275/",
+      "grade": "7",
+      "category": "unknown"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill--947557700",
+      "name": "격분의 서슬",
+      "href": "https://tlcodex.com/kr/skill/947557700/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--967057743",
+      "name": "광란의 칼춤",
+      "href": "https://tlcodex.com/kr/skill/967057743/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--955895166",
+      "name": "그림자 습격",
+      "href": "https://tlcodex.com/kr/skill/955895166/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--955333719",
+      "name": "그림자 잔상",
+      "href": "https://tlcodex.com/kr/skill/955333719/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--940614907",
+      "name": "달빛 가르기",
+      "href": "https://tlcodex.com/kr/skill/940614907/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--955956838",
+      "name": "맹독 주입",
+      "href": "https://tlcodex.com/kr/skill/955956838/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--966842239",
+      "name": "발목 타격",
+      "href": "https://tlcodex.com/kr/skill/966842239/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--967001159",
+      "name": "비수 날리기",
+      "href": "https://tlcodex.com/kr/skill/967001159/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--954402180",
+      "name": "살수 보법",
+      "href": "https://tlcodex.com/kr/skill/954402180/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--956120084",
+      "name": "암살 본능",
+      "href": "https://tlcodex.com/kr/skill/956120084/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--963216662",
+      "name": "고도의 집중",
+      "href": "https://tlcodex.com/kr/skill/963216662/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--964406495",
+      "name": "고행의 술책",
+      "href": "https://tlcodex.com/kr/skill/964406495/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--968525450",
+      "name": "구원의 사슬",
+      "href": "https://tlcodex.com/kr/skill/968525450/",
+      "grade": "5",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--968430722",
+      "name": "금단의 성역",
+      "href": "https://tlcodex.com/kr/skill/968430722/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--962636775",
+      "name": "내면의 평정",
+      "href": "https://tlcodex.com/kr/skill/962636775/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--964537597",
+      "name": "마나 증폭술",
+      "href": "https://tlcodex.com/kr/skill/964537597/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--964209795",
+      "name": "마나구 분출",
+      "href": "https://tlcodex.com/kr/skill/964209795/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--963544450",
+      "name": "반향의 장벽",
+      "href": "https://tlcodex.com/kr/skill/963544450/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--968725966",
+      "name": "빙결 무덤",
+      "href": "https://tlcodex.com/kr/skill/968725966/",
+      "grade": "2",
+      "category": "unknown"
+    },
+    {
+      "id": "skill--963291736",
+      "name": "사슬 벼락",
+      "href": "https://tlcodex.com/kr/skill/963291736/",
+      "grade": "2",
+      "category": "unknown"
+    }
+  ],
+  "runes": [
+    {
+      "id": "item--1752828819",
+      "name": "고귀한 공격 룬: 귀걸이",
+      "href": "https://tlcodex.com/kr/item/1752828819/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828807",
+      "name": "고귀한 공격 룬: 목걸이",
+      "href": "https://tlcodex.com/kr/item/1752828807/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828799",
+      "name": "고귀한 공격 룬: 무기",
+      "href": "https://tlcodex.com/kr/item/1752828799/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828803",
+      "name": "고귀한 공격 룬: 반지",
+      "href": "https://tlcodex.com/kr/item/1752828803/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828811",
+      "name": "고귀한 공격 룬: 팔찌",
+      "href": "https://tlcodex.com/kr/item/1752828811/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828815",
+      "name": "고귀한 공격 룬: 허리띠",
+      "href": "https://tlcodex.com/kr/item/1752828815/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828820",
+      "name": "고귀한 방어 룬: 귀걸이",
+      "href": "https://tlcodex.com/kr/item/1752828820/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828808",
+      "name": "고귀한 방어 룬: 목걸이",
+      "href": "https://tlcodex.com/kr/item/1752828808/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828800",
+      "name": "고귀한 방어 룬: 무기",
+      "href": "https://tlcodex.com/kr/item/1752828800/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1752828804",
+      "name": "고귀한 방어 룬: 반지",
+      "href": "https://tlcodex.com/kr/item/1752828804/",
+      "grade": "6",
+      "category": "unknown"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "item--1727075688",
+      "name": "고대 왕의 갑주: 1",
+      "href": "https://tlcodex.com/kr/item/1727075688/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075689",
+      "name": "고대 왕의 갑주: 2",
+      "href": "https://tlcodex.com/kr/item/1727075689/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075690",
+      "name": "고대 왕의 갑주: 3",
+      "href": "https://tlcodex.com/kr/item/1727075690/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075691",
+      "name": "고대 왕의 갑주: 4",
+      "href": "https://tlcodex.com/kr/item/1727075691/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075693",
+      "name": "고대 왕의 갑주: 루나스톤",
+      "href": "https://tlcodex.com/kr/item/1727075693/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075692",
+      "name": "고대 왕의 갑주: 솔라스톤",
+      "href": "https://tlcodex.com/kr/item/1727075692/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075694",
+      "name": "신을 버린 사제: 1",
+      "href": "https://tlcodex.com/kr/item/1727075694/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075695",
+      "name": "신을 버린 사제: 2",
+      "href": "https://tlcodex.com/kr/item/1727075695/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075696",
+      "name": "신을 버린 사제: 3",
+      "href": "https://tlcodex.com/kr/item/1727075696/",
+      "grade": "3",
+      "category": "unknown"
+    },
+    {
+      "id": "item--1727075697",
+      "name": "신을 버린 사제: 4",
+      "href": "https://tlcodex.com/kr/item/1727075697/",
+      "grade": "3",
+      "category": "unknown"
+    }
+  ],
+  "itemSets": [
+    {
+      "id": "itemset--888695951",
+      "name": "마수 사냥꾼 세트",
+      "href": "https://tlcodex.com/kr/itemset/888695951/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--3020388757",
+      "name": "신의 사도 세트",
+      "href": "https://tlcodex.com/kr/itemset/3020388757/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--755902511",
+      "name": "월야 세트",
+      "href": "https://tlcodex.com/kr/itemset/755902511/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--3673558435",
+      "name": "일섬 세트",
+      "href": "https://tlcodex.com/kr/itemset/3673558435/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--1917534827",
+      "name": "잊혀진 왕 세트",
+      "href": "https://tlcodex.com/kr/itemset/1917534827/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--3946976209",
+      "name": "철벽 수호자 세트",
+      "href": "https://tlcodex.com/kr/itemset/3946976209/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--2918268213",
+      "name": "피의 기사단 세트",
+      "href": "https://tlcodex.com/kr/itemset/2918268213/",
+      "grade": "7",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--2980408746",
+      "name": "급소 포착",
+      "href": "https://tlcodex.com/kr/itemset/2980408746/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--525690159",
+      "name": "나락살수 세트",
+      "href": "https://tlcodex.com/kr/itemset/525690159/",
+      "grade": "6",
+      "category": "unknown"
+    },
+    {
+      "id": "itemset--2254189717",
+      "name": "날개바람 세트",
+      "href": "https://tlcodex.com/kr/itemset/2254189717/",
+      "grade": "6",
+      "category": "unknown"
+    }
+  ],
+  "monsters": [],
+  "locations": []
+}

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "character_web_interface.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "character_web_interface.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
