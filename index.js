@@ -245,43 +245,107 @@ app.get('/', (req, res) => {
                                  selectedClass === '궁수' ? '정확도 활' : 
                                  selectedClass === '도적' ? '암살자의 단검' : '강철 검', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: Math.floor(Math.random() * 3) 
+                        enhancementLevel: Math.floor(Math.random() * 3),
+                        stats: {
+                            attack: Math.floor(Math.random() * 40) + 30,
+                            defense: Math.floor(Math.random() * 20) + 15,
+                            health: Math.floor(Math.random() * 30) + 20,
+                            mana: Math.floor(Math.random() * 25) + 15,
+                            crit: Math.floor(Math.random() * 8) + 5,
+                            dex: Math.floor(Math.random() * 10) + 8
+                        }
                     },
                     chest: { 
                         itemName: selectedClass === '마법사' ? '마법사의 로브' : 
                                  selectedClass === '도적' ? '암살자의 가죽갑옷' : '강철 갑옷', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: Math.floor(Math.random() * 2) 
+                        enhancementLevel: Math.floor(Math.random() * 2),
+                        stats: {
+                            attack: Math.floor(Math.random() * 25) + 20,
+                            defense: Math.floor(Math.random() * 35) + 25,
+                            health: Math.floor(Math.random() * 40) + 30,
+                            mana: Math.floor(Math.random() * 20) + 15,
+                            crit: Math.floor(Math.random() * 6) + 3,
+                            dex: Math.floor(Math.random() * 8) + 5
+                        }
                     },
                     ring1: { 
                         itemName: selectedClass === '마법사' ? '마나 반지' : '공격 반지', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: Math.floor(Math.random() * 2) 
+                        enhancementLevel: Math.floor(Math.random() * 2),
+                        stats: {
+                            attack: Math.floor(Math.random() * 20) + 15,
+                            defense: Math.floor(Math.random() * 15) + 10,
+                            health: Math.floor(Math.random() * 25) + 15,
+                            mana: Math.floor(Math.random() * 30) + 20,
+                            crit: Math.floor(Math.random() * 10) + 5,
+                            dex: Math.floor(Math.random() * 8) + 5
+                        }
                     },
                     ring2: { 
                         itemName: '방어 반지', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: 0 
+                        enhancementLevel: 0,
+                        stats: {
+                            attack: Math.floor(Math.random() * 15) + 10,
+                            defense: Math.floor(Math.random() * 25) + 20,
+                            health: Math.floor(Math.random() * 30) + 20,
+                            mana: Math.floor(Math.random() * 20) + 15,
+                            crit: Math.floor(Math.random() * 8) + 4,
+                            dex: Math.floor(Math.random() * 6) + 4
+                        }
                     },
                     earring1: { 
                         itemName: '치명타 귀걸이', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: 0 
+                        enhancementLevel: 0,
+                        stats: {
+                            attack: Math.floor(Math.random() * 18) + 12,
+                            defense: Math.floor(Math.random() * 12) + 8,
+                            health: Math.floor(Math.random() * 20) + 15,
+                            mana: Math.floor(Math.random() * 25) + 18,
+                            crit: Math.floor(Math.random() * 12) + 8,
+                            dex: Math.floor(Math.random() * 10) + 6
+                        }
                     },
                     earring2: { 
                         itemName: '치명타 귀걸이', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: 0 
+                        enhancementLevel: 0,
+                        stats: {
+                            attack: Math.floor(Math.random() * 18) + 12,
+                            defense: Math.floor(Math.random() * 12) + 8,
+                            health: Math.floor(Math.random() * 20) + 15,
+                            mana: Math.floor(Math.random() * 25) + 18,
+                            crit: Math.floor(Math.random() * 12) + 8,
+                            dex: Math.floor(Math.random() * 10) + 6
+                        }
                     },
                     necklace: { 
                         itemName: '수호의 목걸이', 
                         grade: Math.floor(Math.random() * 3) + 2, 
-                        enhancementLevel: 0 
+                        enhancementLevel: 0,
+                        stats: {
+                            attack: Math.floor(Math.random() * 22) + 18,
+                            defense: Math.floor(Math.random() * 20) + 15,
+                            health: Math.floor(Math.random() * 35) + 25,
+                            mana: Math.floor(Math.random() * 28) + 20,
+                            crit: Math.floor(Math.random() * 10) + 6,
+                            dex: Math.floor(Math.random() * 12) + 8
+                        }
                     },
                     artifact: { 
                         itemName: '마법의 구슬', 
                         grade: Math.floor(Math.random() * 2) + 4, 
-                        enhancementLevel: 0 
+                        enhancementLevel: 0,
+                        stats: {
+                            attack: Math.floor(Math.random() * 30) + 25,
+                            defense: Math.floor(Math.random() * 25) + 20,
+                            health: Math.floor(Math.random() * 40) + 30,
+                            mana: Math.floor(Math.random() * 35) + 25,
+                            crit: Math.floor(Math.random() * 15) + 10,
+                            dex: Math.floor(Math.random() * 15) + 10
+                        }
                     }
                 },
                 stats: {
@@ -330,47 +394,34 @@ app.get('/', (req, res) => {
                 
                 <div style="margin-top: 20px;">
                     <h4>⚔️ 현재 장비</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 10px;">
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">무기</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.weapon.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.weapon.grade} (+\${mockCharacterData.equipment.weapon.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">갑옷</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.chest.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.chest.grade} (+\${mockCharacterData.equipment.chest.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">반지1</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.ring1.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.ring1.grade} (+\${mockCharacterData.equipment.ring1.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">반지2</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.ring2.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.ring2.grade} (+\${mockCharacterData.equipment.ring2.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">귀걸이1</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.earring1.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.earring1.grade} (+\${mockCharacterData.equipment.earring1.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">귀걸이2</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.earring2.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.earring2.grade} (+\${mockCharacterData.equipment.earring2.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">목걸이</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.necklace.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.necklace.grade} (+\${mockCharacterData.equipment.necklace.enhancementLevel})</div>
-                        </div>
-                        <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                            <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">아티팩트</div>
-                            <div style="color: #e74c3c; font-weight: 600;">\${mockCharacterData.equipment.artifact.itemName}</div>
-                            <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${mockCharacterData.equipment.artifact.grade} (+\${mockCharacterData.equipment.artifact.enhancementLevel})</div>
-                        </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
+                        \${Object.entries(mockCharacterData.equipment).map(([slot, item]) => {
+                            const slotNames = {
+                                weapon: '무기',
+                                chest: '갑옷', 
+                                ring1: '반지1',
+                                ring2: '반지2',
+                                earring1: '귀걸이1',
+                                earring2: '귀걸이2',
+                                necklace: '목걸이',
+                                artifact: '아티팩트'
+                            };
+                            return \`
+                                <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">\${slotNames[slot]}</div>
+                                    <div style="color: #e74c3c; font-weight: 600; margin-bottom: 5px;">\${item.itemName}</div>
+                                    <div style="color: #7f8c8d; font-size: 0.9em; margin-bottom: 8px;">등급 \${item.grade} (+\${item.enhancementLevel})</div>
+                                    <div style="font-size: 0.8em; color: #555; line-height: 1.4;">
+                                        <div>attack: +\${item.stats.attack}</div>
+                                        <div>defense: +\${item.stats.defense}</div>
+                                        <div>health: +\${item.stats.health}</div>
+                                        <div>mana: +\${item.stats.mana}</div>
+                                        <div>crit: +\${item.stats.crit}</div>
+                                        <div>dex: +\${item.stats.dex}</div>
+                                    </div>
+                                </div>
+                            \`;
+                        }).join('')}
                     </div>
                 </div>
             \`;
@@ -407,14 +458,58 @@ app.get('/', (req, res) => {
             };
             
             const itemDatabase = {
-                weapon: ['정확도 검', '속도 검', '파괴의 도끼', '태양의 검', '현자의 지팡이'],
-                chest: ['강철 갑옷', '민첩의 로브', '튼튼한 갑옷', '마법 저항 로브', '수호자의 갑옷'],
-                ring1: ['공격 반지', '방어 반지', '마나 반지', '치명타 반지', '활력의 반지'],
-                ring2: ['공격 반지', '방어 반지', '마나 반지', '치명타 반지', '활력의 반지'],
-                earring1: ['치명타 귀걸이', '마나 귀걸이', '방어 귀걸이', '공격 귀걸이'],
-                earring2: ['치명타 귀걸이', '마나 귀걸이', '방어 귀걸이', '공격 귀걸이'],
-                necklace: ['수호의 목걸이', '마력의 목걸이', '신속의 목걸이', '영웅의 문장'],
-                artifact: ['고대 용의 심장', '마법의 구슬', '그림자의 망토', '신비한 구슬']
+                weapon: [
+                    { name: '정확도 검', stats: { attack: 65, defense: 25, health: 45, mana: 30, crit: 12, dex: 15 } },
+                    { name: '속도 검', stats: { attack: 55, defense: 20, health: 35, mana: 25, crit: 15, dex: 18 } },
+                    { name: '파괴의 도끼', stats: { attack: 75, defense: 30, health: 55, mana: 20, crit: 8, dex: 10 } },
+                    { name: '태양의 검', stats: { attack: 70, defense: 28, health: 50, mana: 35, crit: 10, dex: 12 } },
+                    { name: '현자의 지팡이', stats: { attack: 60, defense: 22, health: 40, mana: 50, crit: 14, dex: 16 } }
+                ],
+                chest: [
+                    { name: '강철 갑옷', stats: { attack: 30, defense: 60, health: 80, mana: 25, crit: 5, dex: 8 } },
+                    { name: '민첩의 로브', stats: { attack: 25, defense: 45, health: 60, mana: 40, crit: 8, dex: 15 } },
+                    { name: '튼튼한 갑옷', stats: { attack: 35, defense: 70, health: 90, mana: 20, crit: 3, dex: 5 } },
+                    { name: '마법 저항 로브', stats: { attack: 20, defense: 50, health: 70, mana: 55, crit: 10, dex: 12 } },
+                    { name: '수호자의 갑옷', stats: { attack: 40, defense: 80, health: 100, mana: 30, crit: 6, dex: 10 } }
+                ],
+                ring1: [
+                    { name: '공격 반지', stats: { attack: 25, defense: 15, health: 30, mana: 20, crit: 12, dex: 10 } },
+                    { name: '방어 반지', stats: { attack: 15, defense: 30, health: 40, mana: 15, crit: 8, dex: 8 } },
+                    { name: '마나 반지', stats: { attack: 20, defense: 12, health: 25, mana: 45, crit: 10, dex: 12 } },
+                    { name: '치명타 반지', stats: { attack: 30, defense: 10, health: 20, mana: 25, crit: 18, dex: 15 } },
+                    { name: '활력의 반지', stats: { attack: 18, defense: 20, health: 50, mana: 30, crit: 6, dex: 8 } }
+                ],
+                ring2: [
+                    { name: '공격 반지', stats: { attack: 25, defense: 15, health: 30, mana: 20, crit: 12, dex: 10 } },
+                    { name: '방어 반지', stats: { attack: 15, defense: 30, health: 40, mana: 15, crit: 8, dex: 8 } },
+                    { name: '마나 반지', stats: { attack: 20, defense: 12, health: 25, mana: 45, crit: 10, dex: 12 } },
+                    { name: '치명타 반지', stats: { attack: 30, defense: 10, health: 20, mana: 25, crit: 18, dex: 15 } },
+                    { name: '활력의 반지', stats: { attack: 18, defense: 20, health: 50, mana: 30, crit: 6, dex: 8 } }
+                ],
+                earring1: [
+                    { name: '치명타 귀걸이', stats: { attack: 20, defense: 8, health: 25, mana: 30, crit: 20, dex: 12 } },
+                    { name: '마나 귀걸이', stats: { attack: 15, defense: 10, health: 20, mana: 40, crit: 8, dex: 10 } },
+                    { name: '방어 귀걸이', stats: { attack: 12, defense: 25, health: 35, mana: 20, crit: 6, dex: 8 } },
+                    { name: '공격 귀걸이', stats: { attack: 28, defense: 6, health: 15, mana: 15, crit: 15, dex: 14 } }
+                ],
+                earring2: [
+                    { name: '치명타 귀걸이', stats: { attack: 20, defense: 8, health: 25, mana: 30, crit: 20, dex: 12 } },
+                    { name: '마나 귀걸이', stats: { attack: 15, defense: 10, health: 20, mana: 40, crit: 8, dex: 10 } },
+                    { name: '방어 귀걸이', stats: { attack: 12, defense: 25, health: 35, mana: 20, crit: 6, dex: 8 } },
+                    { name: '공격 귀걸이', stats: { attack: 28, defense: 6, health: 15, mana: 15, crit: 15, dex: 14 } }
+                ],
+                necklace: [
+                    { name: '수호의 목걸이', stats: { attack: 35, defense: 40, health: 60, mana: 45, crit: 12, dex: 15 } },
+                    { name: '마력의 목걸이', stats: { attack: 30, defense: 25, health: 45, mana: 65, crit: 15, dex: 18 } },
+                    { name: '신속의 목걸이', stats: { attack: 25, defense: 30, health: 40, mana: 35, crit: 18, dex: 25 } },
+                    { name: '영웅의 문장', stats: { attack: 40, defense: 35, health: 55, mana: 50, crit: 14, dex: 20 } }
+                ],
+                artifact: [
+                    { name: '고대 용의 심장', stats: { attack: 80, defense: 70, health: 120, mana: 90, crit: 25, dex: 30 } },
+                    { name: '마법의 구슬', stats: { attack: 60, defense: 50, health: 80, mana: 120, crit: 20, dex: 25 } },
+                    { name: '그림자의 망토', stats: { attack: 70, defense: 40, health: 70, mana: 60, crit: 30, dex: 35 } },
+                    { name: '신비한 구슬', stats: { attack: 75, defense: 60, health: 100, mana: 100, crit: 22, dex: 28 } }
+                ]
             };
             
             // 사용자 요청에 따라 추천 개수 결정
@@ -432,18 +527,34 @@ app.get('/', (req, res) => {
                 const slot = slots[i];
                 const currentItem = currentCharacterData.equipment[slot]?.itemName || '기본 아이템';
                 const currentGrade = currentCharacterData.equipment[slot]?.grade || 3;
+                const currentStats = currentCharacterData.equipment[slot]?.stats || { attack: 0, defense: 0, health: 0, mana: 0, crit: 0, dex: 0 };
                 
                 // 같은 슬롯의 다른 아이템 추천
-                const availableItems = itemDatabase[slot] || ['개선된 아이템'];
-                const recommendedItem = availableItems[Math.floor(Math.random() * availableItems.length)];
+                const availableItems = itemDatabase[slot] || [{ name: '개선된 아이템', stats: { attack: 0, defense: 0, health: 0, mana: 0, crit: 0, dex: 0 } }];
+                const recommendedItemData = availableItems[Math.floor(Math.random() * availableItems.length)];
+                
+                // 스탯 개선 계산
+                const statImprovements = {
+                    attack: Math.max(0, recommendedItemData.stats.attack - currentStats.attack),
+                    defense: Math.max(0, recommendedItemData.stats.defense - currentStats.defense),
+                    health: Math.max(0, recommendedItemData.stats.health - currentStats.health),
+                    mana: Math.max(0, recommendedItemData.stats.mana - currentStats.mana),
+                    crit: Math.max(0, recommendedItemData.stats.crit - currentStats.crit),
+                    dex: Math.max(0, recommendedItemData.stats.dex - currentStats.dex)
+                };
+                
+                const totalImprovement = Object.values(statImprovements).reduce((sum, val) => sum + val, 0);
                 
                 mockRecommendations.push({
                     slot: slot,
                     slotName: slotNames[slot],
                     currentItem: currentItem,
                     currentGrade: currentGrade,
-                    recommendedItem: recommendedItem,
-                    improvement: Math.floor(Math.random() * 40) + 20 // 20-60점 향상
+                    currentStats: currentStats,
+                    recommendedItem: recommendedItemData.name,
+                    recommendedStats: recommendedItemData.stats,
+                    statImprovements: statImprovements,
+                    improvement: totalImprovement
                 });
             }
 
@@ -467,8 +578,42 @@ app.get('/', (req, res) => {
                             <div style="color: #e74c3c; font-weight: 600; margin-bottom: 10px;">
                                 \${rec.currentItem} (등급 \${rec.currentGrade}) → \${rec.recommendedItem}
                             </div>
-                            <div style="color: #27ae60; font-weight: 600;">
-                                개선 효과: +\${rec.improvement}점 향상
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                                <div>
+                                    <div style="font-weight: 600; color: #7f8c8d; margin-bottom: 5px;">현재 스탯</div>
+                                    <div style="font-size: 0.8em; color: #555; line-height: 1.4;">
+                                        <div>attack: +\${rec.currentStats.attack}</div>
+                                        <div>defense: +\${rec.currentStats.defense}</div>
+                                        <div>health: +\${rec.currentStats.health}</div>
+                                        <div>mana: +\${rec.currentStats.mana}</div>
+                                        <div>crit: +\${rec.currentStats.crit}</div>
+                                        <div>dex: +\${rec.currentStats.dex}</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: #27ae60; margin-bottom: 5px;">추천 아이템 스탯</div>
+                                    <div style="font-size: 0.8em; color: #555; line-height: 1.4;">
+                                        <div>attack: +\${rec.recommendedStats.attack}</div>
+                                        <div>defense: +\${rec.recommendedStats.defense}</div>
+                                        <div>health: +\${rec.recommendedStats.health}</div>
+                                        <div>mana: +\${rec.recommendedStats.mana}</div>
+                                        <div>crit: +\${rec.recommendedStats.crit}</div>
+                                        <div>dex: +\${rec.recommendedStats.dex}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #e8f5e8; padding: 10px; border-radius: 8px; border: 1px solid #c3e6c3;">
+                                <div style="font-weight: 600; color: #27ae60; margin-bottom: 5px;">스탯 개선 효과</div>
+                                <div style="font-size: 0.8em; color: #555; line-height: 1.4;">
+                                    \${Object.entries(rec.statImprovements).map(([stat, improvement]) => 
+                                        improvement > 0 ? \`<div style="color: #27ae60;">\${stat}: +\${improvement}</div>\` : ''
+                                    ).join('')}
+                                </div>
+                                <div style="color: #27ae60; font-weight: 600; margin-top: 5px;">
+                                    총 개선 효과: +\${rec.improvement}점 향상
+                                </div>
                             </div>
                         </div>
                     \`).join('')}
