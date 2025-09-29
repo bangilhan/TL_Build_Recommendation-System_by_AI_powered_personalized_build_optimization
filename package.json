@@ -2,12 +2,11 @@
   "name": "tl-build-recommendation-system",
   "version": "1.0.0",
   "description": "TL Build Recommendation System - AI-powered personalized build optimization",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node character_web_interface.js",
-    "dev": "node character_web_interface.js",
-    "test": "node character_api_integration.js",
-    "setup": "node enhanced_database_setup.js"
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "node index.js"
   },
   "keywords": [
     "throne-and-liberty",
@@ -20,12 +19,7 @@
   "author": "TL Build Recommendation Team",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.8",
-    "cheerio": "^1.0.0-rc.12",
-    "puppeteer": "^21.11.0",
-    "express": "^4.19.2",
-    "sqlite3": "^5.1.7",
-    "body-parser": "^1.20.2"
+    "express": "^4.19.2"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -33,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/tl-build-recommendation-system.git"
+    "url": "https://github.com/bangilhan/TL_Build_Recommendation-System_by_AI_powered_personalized_build_optimization.git"
   },
-  "homepage": "https://github.com/your-username/tl-build-recommendation-system#readme"
+  "homepage": "https://github.com/bangilhan/TL_Build_Recommendation-System_by_AI_powered_personalized_build_optimization#readme"
 }
