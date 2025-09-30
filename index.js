@@ -267,7 +267,7 @@ app.get('/', (req, res) => {
                 });
                 const data = await resp.json();
                 if (!data.success) {
-                    characterDetails.innerHTML = `<div class="error">❌ \${data.message || '캐릭터 조회 실패'}</div>`;
+                    characterDetails.innerHTML = '<div class="error">❌ ' + (data.message || '캐릭터 조회 실패') + '</div>';
                     return;
                 }
 
@@ -297,7 +297,7 @@ app.get('/', (req, res) => {
                     </div>
                 `;
             } catch (e) {
-                characterDetails.innerHTML = `<div class="error">❌ \${e.message}</div>`;
+                characterDetails.innerHTML = '<div class="error">❌ ' + (e.message || '오류') + '</div>';
             }
         }
         async function getRecommendation() {
