@@ -267,7 +267,7 @@ app.get('/', (req, res) => {
                 });
                 const data = await resp.json();
                 if (!data.success) {
-                    characterDetails.innerHTML = `<div class="error">❌ ${data.message || '캐릭터 조회 실패'}</div>`;
+                    characterDetails.innerHTML = `<div class="error">❌ \${data.message || '캐릭터 조회 실패'}</div>`;
                     return;
                 }
 
@@ -277,27 +277,27 @@ app.get('/', (req, res) => {
                 characterDetails.innerHTML = `
                     <div class="success">
                         <h4>✅ 캐릭터 정보 조회 성공!</h4>
-                        <p><strong>서버:</strong> ${data.character.서버명 || ''}</p>
-                        <p><strong>캐릭터명:</strong> ${data.character.캐릭터이름}</p>
-                        <p><strong>레벨:</strong> ${data.character.레벨 || ''}</p>
-                        <p><strong>클래스:</strong> ${data.character.클래스 || ''}</p>
+                        <p><strong>서버:</strong> \${data.character.서버명 || ''}</p>
+                        <p><strong>캐릭터명:</strong> \${data.character.캐릭터이름}</p>
+                        <p><strong>레벨:</strong> \${data.character.레벨 || ''}</p>
+                        <p><strong>클래스:</strong> \${data.character.클래스 || ''}</p>
                     </div>
                     <div style="margin-top: 20px;">
                         <h4>⚔️ 현재 장비</h4>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
-                            ${data.equipment.map(item => `
+                            \${data.equipment.map(item => `
                                 <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">${item.부위}</div>
-                                    <div style="color: #e74c3c; font-weight: 600; margin-bottom: 5px;">${item.아이템이름}</div>
-                                    <div style="color: #7f8c8d; font-size: 0.9em;">등급 ${item.등급}</div>
-                                    <div style="font-size: 0.8em; color: #555;">${item.옵션명 || ''}: ${item.값 || ''}</div>
+                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">\${item.부위}</div>
+                                    <div style="color: #e74c3c; font-weight: 600; margin-bottom: 5px;">\${item.아이템이름}</div>
+                                    <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${item.등급}</div>
+                                    <div style="font-size: 0.8em; color: #555;">\${item.옵션명 || ''}: \${item.값 || ''}</div>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
                 `;
             } catch (e) {
-                characterDetails.innerHTML = `<div class="error">❌ ${e.message}</div>`;
+                characterDetails.innerHTML = `<div class="error">❌ \${e.message}</div>`;
             }
         }
         async function getRecommendation() {
@@ -335,12 +335,12 @@ app.get('/', (req, res) => {
                 recommendationContent.innerHTML = `
                     <div class="success">
                         <h4>🤖 AI 추천 결과</h4>
-                        <div style="white-space: pre-wrap; line-height: 1.6;">${data.recommendation}</div>
-                        <div style="margin-top:10px;color:#555;">분석된 아이템 수: ${data.db_items_count || 0}개</div>
+                        <div style="white-space: pre-wrap; line-height: 1.6;">\${data.recommendation}</div>
+                        <div style="margin-top:10px;color:#555;">분석된 아이템 수: \${data.db_items_count || 0}개</div>
                     </div>
                 `;
             } catch (e) {
-                recommendationContent.innerHTML = `<div class="error">❌ ${e.message}</div>`;
+                recommendationContent.innerHTML = `<div class="error">❌ \${e.message}</div>`;
             }
         }
 
