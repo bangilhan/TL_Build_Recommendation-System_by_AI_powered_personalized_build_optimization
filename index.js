@@ -404,8 +404,23 @@ app.post('/api/character', async (req, res) => {
 
         res.json({ success: true, character, equipment });
     } catch (e) {
-        console.error('[/api/character] error:', e);
-        res.status(500).json({ success: false, message: '캐릭터 조회 실패', error: String(e) });
+        console.error('[/api/character] error:', {
+            message: e && e.message ? e.message : String(e),
+            code: e && e.code ? e.code : undefined,
+            dbHost: DB_HOST,
+            dbName: DB_NAME
+        });
+        res.status(500).json({ success: false, message: '캐릭터 조회 실패', error: (e && e.message) ? e.message : String(e) });
+    }
+});
+
+// 간단한 헬스체크 및 DB 연결 확인용 엔드포인트
+app.get('/api/health', async (req, res) => {
+    try {
+        const rows = await queryDB('SELECT 1 as ok');
+        res.json({ ok: true, db: rows && rows[0] && rows[0].ok === 1, host: DB_HOST, dbName: DB_NAME });
+    } catch (e) {
+        res.status(500).json({ ok: false, error: (e && e.message) ? e.message : String(e), host: DB_HOST, dbName: DB_NAME });
     }
 });
 
