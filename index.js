@@ -379,13 +379,13 @@ app.get('/', (req, res) => {
 app.post('/api/character', async (req, res) => {
     try {
         const { serverName, characterName } = req.body || {};
-        if (!characterName) {
-            return res.status(400).json({ success: false, message: '캐릭터명을 입력해주세요.' });
+        if (!characterName || !serverName) {
+            return res.status(400).json({ success: false, message: '서버명과 캐릭터명을 모두 입력해주세요.' });
         }
 
         const rows = await queryDB(
-            'SELECT * FROM characters WHERE 캐릭터이름 = ?' + (serverName ? ' AND 서버명 = ?' : ''),
-            serverName ? [characterName, serverName] : [characterName]
+            'SELECT * FROM characters WHERE 캐릭터이름 = ? AND 서버명 = ?',
+            [characterName, serverName]
         );
 
         if (rows.length === 0) {
