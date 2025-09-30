@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const mysql = require('mysql2/promise');
 
-// 환경변수 (Vercel Settings → Environment Variables 에서 설정)
+// 환경변수 (Vercel Settings → Environment Variables)
 const DB_HOST = process.env.DB_HOST;
 const DB_PORT = Number(process.env.DB_PORT || 3306);
 const DB_USER = process.env.DB_USER;
@@ -45,8 +45,7 @@ app.use((req, res, next) => {
 
 // 메인 페이지
 app.get('/', (req, res) => {
-    res.send(`
-<!DOCTYPE html>
+    res.send(`<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -238,7 +237,7 @@ app.get('/', (req, res) => {
 
         function selectServer(serverName) {
             document.getElementById('serverName').value = serverName;
-            document.querySelectorAll('.server-btn').forEach(btn => {
+            document.querySelectorAll('.server-btn').forEach(function(btn){
                 btn.classList.remove('selected');
             });
             event.target.classList.add('selected');
@@ -247,7 +246,6 @@ app.get('/', (req, res) => {
         async function loadCharacter() {
             const serverName = document.getElementById('serverName').value.trim();
             const characterName = document.getElementById('characterName').value.trim();
-            
             if (!serverName || !characterName) {
                 alert('서버명과 캐릭터명을 모두 입력해주세요!');
                 return;
@@ -255,7 +253,6 @@ app.get('/', (req, res) => {
 
             const characterInfo = document.getElementById('characterInfo');
             const characterDetails = document.getElementById('characterDetails');
-
             characterInfo.style.display = 'block';
             characterDetails.innerHTML = '<div style="text-align: center; padding: 20px;">캐릭터 정보를 조회하고 있습니다...</div>';
 
@@ -263,7 +260,7 @@ app.get('/', (req, res) => {
                 const resp = await fetch('/api/character', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ serverName, characterName })
+                    body: JSON.stringify({ serverName: serverName, characterName: characterName })
                 });
                 const data = await resp.json();
                 if (!data.success) {
@@ -274,32 +271,34 @@ app.get('/', (req, res) => {
                 currentCharacterId = data.character.캐릭터아이디;
                 currentCharacterData = { server: data.character.서버명, name: data.character.캐릭터이름 };
 
-                characterDetails.innerHTML = `
-                    <div class="success">
-                        <h4>✅ 캐릭터 정보 조회 성공!</h4>
-                        <p><strong>서버:</strong> \${data.character.서버명 || ''}</p>
-                        <p><strong>캐릭터명:</strong> \${data.character.캐릭터이름}</p>
-                        <p><strong>레벨:</strong> \${data.character.레벨 || ''}</p>
-                        <p><strong>클래스:</strong> \${data.character.클래스 || ''}</p>
-                    </div>
-                    <div style="margin-top: 20px;">
-                        <h4>⚔️ 현재 장비</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
-                            \${data.equipment.map(item => `
-                                <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
-                                    <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">\${item.부위}</div>
-                                    <div style="color: #e74c3c; font-weight: 600; margin-bottom: 5px;">\${item.아이템이름}</div>
-                                    <div style="color: #7f8c8d; font-size: 0.9em;">등급 \${item.등급}</div>
-                                    <div style="font-size: 0.8em; color: #555;">\${item.옵션명 || ''}: \${item.값 || ''}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
+                var html = ''
+                    + '<div class="success">'
+                    +   '<h4>✅ 캐릭터 정보 조회 성공!</h4>'
+                    +   '<p><strong>서버:</strong> ' + (data.character.서버명 || '') + '</p>'
+                    +   '<p><strong>캐릭터명:</strong> ' + data.character.캐릭터이름 + '</p>'
+                    +   '<p><strong>레벨:</strong> ' + (data.character.레벨 || '') + '</p>'
+                    +   '<p><strong>클래스:</strong> ' + (data.character.클래스 || '') + '</p>'
+                    + '</div>'
+                    + '<div style="margin-top: 20px;">'
+                    +   '<h4>⚔️ 현재 장비</h4>'
+                    +   '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">'
+                    +     data.equipment.map(function(item){
+                            return '<div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">'
+                                 +   '<div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">' + item.부위 + '</div>'
+                                 +   '<div style="color: #e74c3c; font-weight: 600; margin-bottom: 5px;">' + item.아이템이름 + '</div>'
+                                 +   '<div style="color: #7f8c8d; font-size: 0.9em;">등급 ' + item.등급 + '</div>'
+                                 +   '<div style="font-size: 0.8em; color: #555;">' + (item.옵션명 || '') + ': ' + (item.값 || '') + '</div>'
+                                 + '</div>';
+                        }).join('')
+                    +   '</div>'
+                    + '</div>';
+
+                characterDetails.innerHTML = html;
             } catch (e) {
                 characterDetails.innerHTML = '<div class="error">❌ ' + (e.message || '오류') + '</div>';
             }
         }
+
         async function getRecommendation() {
             if (!currentCharacterId) {
                 alert('먼저 캐릭터 정보를 조회해주세요!');
@@ -332,15 +331,17 @@ app.get('/', (req, res) => {
                     recommendationContent.innerHTML = '<div class="error">LLM 호출 실패. 나중에 다시 시도해주세요.</div>';
                     return;
                 }
-                recommendationContent.innerHTML = `
-                    <div class="success">
-                        <h4>🤖 AI 추천 결과</h4>
-                        <div style="white-space: pre-wrap; line-height: 1.6;">\${data.recommendation}</div>
-                        <div style="margin-top:10px;color:#555;">분석된 아이템 수: \${data.db_items_count || 0}개</div>
-                    </div>
-                `;
+
+                var recHtml = ''
+                    + '<div class="success">'
+                    +   '<h4>🤖 AI 추천 결과</h4>'
+                    +   '<div style="white-space: pre-wrap; line-height: 1.6;">' + (data.recommendation || '') + '</div>'
+                    +   '<div style="margin-top:10px;color:#555;">분석된 아이템 수: ' + (data.db_items_count || 0) + '개</div>'
+                    + '</div>';
+
+                recommendationContent.innerHTML = recHtml;
             } catch (e) {
-                recommendationContent.innerHTML = `<div class="error">❌ \${e.message}</div>`;
+                recommendationContent.innerHTML = '<div class="error">❌ ' + (e.message || '오류') + '</div>';
             }
         }
 
@@ -352,20 +353,17 @@ app.get('/', (req, res) => {
             document.getElementById('recommendationResult').style.display = 'none';
             currentCharacterId = null;
             currentCharacterData = null;
-            
-            document.querySelectorAll('.server-btn').forEach(btn => {
+            document.querySelectorAll('.server-btn').forEach(function(btn){
                 btn.classList.remove('selected');
             });
         }
 
-        // Enter 키로 캐릭터 조회
         document.getElementById('characterName').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 loadCharacter();
             }
         });
 
-        // Enter 키로 추천 요청
         document.getElementById('userRequest').addEventListener('keypress', function(e) {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -374,8 +372,7 @@ app.get('/', (req, res) => {
         });
     </script>
 </body>
-</html>
-    `);
+</html>`);
 });
 
 // 캐릭터 + 착용장비 조회 API (DB 연동)
@@ -420,7 +417,6 @@ app.post('/api/llm-recommend', async (req, res) => {
             return res.status(400).json({ success: false, message: '추천 요청이 비어있습니다.' });
         }
 
-        // 간단한 필터로 관련 아이템 Top N 조회
         let sql = 'SELECT * FROM items_info WHERE 1=1';
         const params = [];
         if (userQuery.includes('영웅')) { sql += ' AND 등급 = ?'; params.push('영웅'); }
@@ -429,7 +425,6 @@ app.post('/api/llm-recommend', async (req, res) => {
         sql += ' ORDER BY 값 DESC LIMIT 20';
         const items = await queryDB(sql, params);
 
-        // VLLM 서버 호출
         const llmResp = await axios.post(
             `${VLLM_API_URL}/chat/completions`,
             {
@@ -437,7 +432,16 @@ app.post('/api/llm-recommend', async (req, res) => {
                 messages: [
                     {
                         role: 'system',
-                        content: `당신은 Throne and Liberty 빌드 추천 전문가입니다.\n아래 데이터베이스 아이템 정보를 바탕으로, 사용자의 상황과 캐릭터 장비/스탯을 고려해 적합한 아이템을 추천하세요.\n추천 이유를 짧고 명확히 설명하세요. 모르면 '정보 부족'이라고 답변하세요.\n\n[DB 아이템 Top N]\n${JSON.stringify(items, null, 2)}\n\n[캐릭터 정보]\n${JSON.stringify(characterInfo || {}, null, 2)}`
+                        content:
+`당신은 Throne and Liberty 빌드 추천 전문가입니다.
+아래 데이터베이스 아이템 정보를 바탕으로, 사용자의 상황과 캐릭터 장비/스탯을 고려해 적합한 아이템을 추천하세요.
+추천 이유를 짧고 명확히 설명하세요. 모르면 '정보 부족'이라고 답변하세요.
+
+[DB 아이템 Top N]
+${JSON.stringify(items, null, 2)}
+
+[캐릭터 정보]
+${JSON.stringify(characterInfo || {}, null, 2)}`
                     },
                     { role: 'user', content: userQuery }
                 ],
@@ -455,14 +459,13 @@ app.post('/api/llm-recommend', async (req, res) => {
     }
 });
 
-// 헬스 체크 엔드포인트
+// 헬스 체크
 app.get('/health', (req, res) => {
-    res.json({ 
-        status: 'ok', 
+    res.json({
+        status: 'ok',
         timestamp: new Date().toISOString(),
         uptime: process.uptime()
     });
 });
 
-// Vercel 서버리스 함수로 내보내기
 module.exports = app;
