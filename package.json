@@ -19,7 +19,9 @@
   "author": "TL Build Recommendation Team",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "axios": "^1.7.7",
+    "mysql2": "^3.11.3"
   },
   "engines": {
     "node": ">=18.0.0",

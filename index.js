@@ -1,4 +1,33 @@
 const express = require('express');
+const axios = require('axios');
+const mysql = require('mysql2/promise');
+
+// 환경변수 (Vercel Settings → Environment Variables 에서 설정)
+const DB_HOST = process.env.DB_HOST;
+const DB_PORT = Number(process.env.DB_PORT || 3306);
+const DB_USER = process.env.DB_USER;
+const DB_PASS = process.env.DB_PASS;
+const DB_NAME = process.env.DB_NAME;
+
+const VLLM_API_URL = process.env.VLLM_API_URL; // 예: http://172.20.92.48:30709/v1
+const VLLM_API_KEY = process.env.VLLM_API_KEY || 'sk-local';
+
+async function queryDB(sql, params = []) {
+    const conn = await mysql.createConnection({
+        host: DB_HOST,
+        port: DB_PORT,
+        user: DB_USER,
+        password: DB_PASS,
+        database: DB_NAME,
+        charset: 'utf8mb4'
+    });
+    try {
+        const [rows] = await conn.execute(sql, params);
+        return rows;
+    } finally {
+        await conn.end();
+    }
+}
 
 const app = express();
 
@@ -658,6 +687,83 @@ app.get('/', (req, res) => {
 </body>
 </html>
     `);
+});
+
+// 캐릭터 + 착용장비 조회 API (DB 연동)
+app.post('/api/character', async (req, res) => {
+    try {
+        const { serverName, characterName } = req.body || {};
+        if (!characterName) {
+            return res.status(400).json({ success: false, message: '캐릭터명을 입력해주세요.' });
+        }
+
+        const rows = await queryDB(
+            'SELECT * FROM characters WHERE 캐릭터이름 = ?' + (serverName ? ' AND 서버명 = ?' : ''),
+            serverName ? [characterName, serverName] : [characterName]
+        );
+
+        if (rows.length === 0) {
+            return res.json({ success: false, message: '해당 캐릭터를 찾을 수 없습니다.' });
+        }
+
+        const character = rows[0];
+        const equipment = await queryDB(
+            `SELECT ci.부위, i.아이템이름, i.등급, i.옵션명, i.값
+             FROM characters_items ci
+             JOIN items_info i ON i.아이템아이디 = ci.아이템아이디
+             WHERE ci.캐릭터아이디 = ?
+             ORDER BY FIELD(ci.부위,'무기','투구','상의','하의','장갑','신발','목걸이','반지','허리띠','망토')`,
+            [character.캐릭터아이디]
+        );
+
+        res.json({ success: true, character, equipment });
+    } catch (e) {
+        console.error('[/api/character] error:', e);
+        res.status(500).json({ success: false, message: '캐릭터 조회 실패', error: String(e) });
+    }
+});
+
+// VLLM 기반 추천 API (DB + LLM 연동)
+app.post('/api/llm-recommend', async (req, res) => {
+    try {
+        const { userQuery, characterInfo } = req.body || {};
+        if (!userQuery) {
+            return res.status(400).json({ success: false, message: '추천 요청이 비어있습니다.' });
+        }
+
+        // 간단한 필터로 관련 아이템 Top N 조회
+        let sql = 'SELECT * FROM items_info WHERE 1=1';
+        const params = [];
+        if (userQuery.includes('영웅')) { sql += ' AND 등급 = ?'; params.push('영웅'); }
+        if (userQuery.includes('무기')) { sql += ' AND 부위 = ?'; params.push('무기'); }
+        if (userQuery.includes('방어구')) { sql += ' AND 부위 IN (?,?,?,?,?)'; params.push('투구','상의','하의','장갑','신발'); }
+        sql += ' ORDER BY 값 DESC LIMIT 20';
+        const items = await queryDB(sql, params);
+
+        // VLLM 서버 호출
+        const llmResp = await axios.post(
+            `${VLLM_API_URL}/chat/completions`,
+            {
+                model: 'deepseek-coder-7b',
+                messages: [
+                    {
+                        role: 'system',
+                        content: `당신은 Throne and Liberty 빌드 추천 전문가입니다.\n아래 데이터베이스 아이템 정보를 바탕으로, 사용자의 상황과 캐릭터 장비/스탯을 고려해 적합한 아이템을 추천하세요.\n추천 이유를 짧고 명확히 설명하세요. 모르면 '정보 부족'이라고 답변하세요.\n\n[DB 아이템 Top N]\n${JSON.stringify(items, null, 2)}\n\n[캐릭터 정보]\n${JSON.stringify(characterInfo || {}, null, 2)}`
+                    },
+                    { role: 'user', content: userQuery }
+                ],
+                temperature: 0.1,
+                max_tokens: 512
+            },
+            { headers: { Authorization: `Bearer ${VLLM_API_KEY}` }, timeout: 30000 }
+        );
+
+        const text = llmResp.data?.choices?.[0]?.message?.content || '(빈 응답)';
+        res.json({ success: true, recommendation: text, db_items_count: items.length });
+    } catch (e) {
+        console.error('[/api/llm-recommend] error:', e?.response?.data || e);
+        res.status(500).json({ success: false, message: 'LLM 추천 실패', error: String(e), fallback: true });
+    }
 });
 
 // 헬스 체크 엔드포인트
