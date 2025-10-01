@@ -4,9 +4,25 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "api/character.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/character-recommend.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/api/character",
+      "dest": "/api/character.js"
+    },
+    {
+      "src": "/api/character-recommend",
+      "dest": "/api/character-recommend.js"
+    },
     {
       "src": "/(.*)",
       "dest": "index.js"

@@ -1,0 +1,29 @@
+---
+alwaysApply: true
+description: Vercel 배포 및 서버리스 함수 구조 가이드
+---
+
+# Vercel 배포 가이드
+
+## 프로젝트 구조
+- 메인 진입점: [index.js](mdc:index.js) (루트)
+- API 엔드포인트: [api/index.js](mdc:api/index.js)
+- Supabase 연동: [api/supabase.js](mdc:api/supabase.js)
+- 캐릭터 API: [api/characters.js](mdc:api/characters.js)
+
+## Vercel 서버리스 함수 규칙
+1. API 엔드포인트는 `api/` 폴더에 위치해야 함
+2. 각 API는 독립적인 파일이거나 `api/index.js`에서 라우팅
+3. 환경 변수는 Vercel 대시보드에서 설정
+4. MySQL 대신 Supabase 사용 (PostgreSQL)
+
+## 환경 변수
+- `SUPABASE_URL`: Supabase 프로젝트 URL
+- `SUPABASE_ANON_KEY`: Supabase 익명 키
+- `NODE_ENV`: production
+
+## 배포 체크리스트
+1. 환경 변수 설정 확인
+2. API 엔드포인트 경로 확인
+3. Supabase 연결 테스트
+4. MySQL 의존성 제거

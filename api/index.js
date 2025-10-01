@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { getCharacter, getCharacterEquipment, getBuildRecommendations, getItemRecommendations } = require('./characters');
 
 const app = express();
 
@@ -534,8 +535,8 @@ app.get('/health', (req, res) => {
     });
 });
 
-// API 엔드포인트들 (시뮬레이션)
-app.post('/api/character', (req, res) => {
+// API 엔드포인트들 (Supabase 연동)
+app.post('/api/character', async (req, res) => {
     const { serverName, characterName } = req.body;
     
     if (!serverName || !characterName) {
@@ -545,32 +546,48 @@ app.post('/api/character', (req, res) => {
         });
     }
 
-    // 시뮬레이션된 응답
-    res.json({
-        success: true,
-        characterId: 1,
-        characterData: {
-            server: serverName,
-            name: characterName,
-            level: Math.floor(Math.random() * 20) + 40,
-            class: ['전사', '마법사', '궁수', '도적', '성기사', '사제'][Math.floor(Math.random() * 6)],
-            equipment: {
-                weapon: { itemName: '강철 검', grade: 3, enhancementLevel: 2 },
-                chest: { itemName: '강철 갑옷', grade: 3, enhancementLevel: 1 },
-                ring1: { itemName: '공격 반지', grade: 3, enhancementLevel: 0 }
-            },
-            stats: {
-                strength: Math.floor(Math.random() * 50) + 20,
-                constitution: Math.floor(Math.random() * 50) + 20,
-                dexterity: Math.floor(Math.random() * 50) + 20,
-                intelligence: Math.floor(Math.random() * 50) + 20
-            },
-            lastUpdated: new Date().toISOString()
+    try {
+        // Supabase에서 캐릭터 정보 조회
+        const character = await getCharacter(serverName, characterName);
+        
+        if (!character) {
+            return res.json({
+                success: false,
+                error: '캐릭터를 찾을 수 없습니다.'
+            });
         }
-    });
+
+        // 캐릭터의 장비 정보 조회
+        const equipment = await getCharacterEquipment(character.캐릭터아이디);
+
+        res.json({
+            success: true,
+            characterId: character.캐릭터아이디,
+            characterData: {
+                server: character.서버명,
+                name: character.캐릭터이름,
+                level: character.레벨,
+                class: character.클래스,
+                equipment: equipment.map(item => ({
+                    slot: item.부위,
+                    itemName: item.items_info?.아이템이름 || '알 수 없음',
+                    grade: item.items_info?.등급 || '일반',
+                    option: item.items_info?.옵션명 || '',
+                    value: item.items_info?.값 || 0
+                })),
+                lastUpdated: character.생성일
+            }
+        });
+    } catch (error) {
+        console.error('캐릭터 조회 오류:', error);
+        res.json({
+            success: false,
+            error: '캐릭터 조회 중 오류가 발생했습니다.'
+        });
+    }
 });
 
-app.post('/api/character-recommend', (req, res) => {
+app.post('/api/character-recommend', async (req, res) => {
     const { characterId, userRequest } = req.body;
     
     if (!characterId || !userRequest) {
@@ -580,40 +597,50 @@ app.post('/api/character-recommend', (req, res) => {
         });
     }
 
-    // 시뮬레이션된 추천 결과
-    const recommendations = [
-        {
-            slot: 'weapon',
-            currentItem: '강철 검',
-            currentGrade: 3,
-            recommendedItem: '정확도 검',
-            improvement: 45
-        },
-        {
-            slot: 'ring1',
-            currentItem: '공격 반지',
-            currentGrade: 3,
-            recommendedItem: '공격 반지',
-            improvement: 30
-        }
-    ];
+    try {
+        // Supabase에서 빌드 추천 조회
+        const buildRecommendations = await getBuildRecommendations(characterId, userRequest);
+        
+        // Supabase에서 아이템 추천 조회
+        const itemRecommendations = await getItemRecommendations(characterId, userRequest);
 
-    res.json({
-        success: true,
-        characterId: characterId,
-        currentEquipment: [],
-        currentStats: [],
-        equipmentAnalysis: {
-            weakestSlots: recommendations
-        },
-        recommendations: recommendations,
-        improvementAnalysis: {
-            totalImprovement: recommendations.reduce((sum, rec) => sum + rec.improvement, 0),
-            costSavings: recommendations.reduce((sum, rec) => sum + rec.currentGrade * 1000, 0),
-            recommendationCount: recommendations.length,
-            summary: `${recommendations.length}개 슬롯 개선으로 총 ${recommendations.reduce((sum, rec) => sum + rec.improvement, 0)}점 향상, ${recommendations.reduce((sum, rec) => sum + rec.currentGrade * 1000, 0).toLocaleString()} 골드 절약`
-        }
-    });
+        // 추천 결과 포맷팅
+        const recommendations = itemRecommendations.slice(0, 5).map(item => ({
+            slot: item.부위,
+            currentItem: '현재 장비',
+            currentGrade: 1,
+            recommendedItem: item.아이템이름,
+            improvement: Math.floor(item.값 || 0),
+            grade: item.등급,
+            option: item.옵션명
+        }));
+
+        const totalImprovement = recommendations.reduce((sum, rec) => sum + rec.improvement, 0);
+
+        res.json({
+            success: true,
+            characterId: characterId,
+            currentEquipment: [],
+            currentStats: [],
+            equipmentAnalysis: {
+                weakestSlots: recommendations
+            },
+            recommendations: recommendations,
+            buildRecommendations: buildRecommendations,
+            improvementAnalysis: {
+                totalImprovement: totalImprovement,
+                costSavings: recommendations.reduce((sum, rec) => sum + rec.currentGrade * 1000, 0),
+                recommendationCount: recommendations.length,
+                summary: `${recommendations.length}개 아이템 추천으로 총 ${totalImprovement}점 향상`
+            }
+        });
+    } catch (error) {
+        console.error('추천 조회 오류:', error);
+        res.json({
+            success: false,
+            error: '추천 조회 중 오류가 발생했습니다.'
+        });
+    }
 });
 
 // Vercel 서버리스 함수로 내보내기

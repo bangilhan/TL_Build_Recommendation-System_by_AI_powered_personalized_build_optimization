@@ -1,33 +1,11 @@
 const express = require('express');
-const axios = require('axios');
-const mysql = require('mysql2/promise');
+const { createClient } = require('@supabase/supabase-js');
 
-// 환경변수 (Vercel Settings → Environment Variables)
-const DB_HOST = process.env.DB_HOST;
-const DB_PORT = Number(process.env.DB_PORT || 3306);
-const DB_USER = process.env.DB_USER;
-const DB_PASS = process.env.DB_PASS;
-const DB_NAME = process.env.DB_NAME;
-
-const VLLM_API_URL = process.env.VLLM_API_URL; // 예: http://172.20.92.48:30709/v1
-const VLLM_API_KEY = process.env.VLLM_API_KEY || 'sk-local';
-
-async function queryDB(sql, params = []) {
-    const conn = await mysql.createConnection({
-        host: DB_HOST,
-        port: DB_PORT,
-        user: DB_USER,
-        password: DB_PASS,
-        database: DB_NAME,
-        charset: 'utf8mb4'
-    });
-    try {
-        const [rows] = await conn.execute(sql, params);
-        return rows;
-    } finally {
-        await conn.end();
-    }
-}
+// Supabase 클라이언트 생성
+const supabase = createClient(
+    process.env.SUPABASE_URL || 'https://dycuolwtjaectfdzbopb.supabase.co',
+    process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR5Y3VvbHd0amFlY3RmZHpib3BiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNDIwODEsImV4cCI6MjA3NDgxODA4MX0.P8HaKFJwBdQGgkeRD_sjlvD0CL_QTxZGl4Hk784hwmY'
+);
 
 const app = express();
 
@@ -43,6 +21,118 @@ app.use((req, res, next) => {
     next();
 });
 
+// 캐릭터 정보 조회 함수
+async function getCharacter(serverName, characterName) {
+    try {
+        const { data, error } = await supabase
+            .from('characters')
+            .select('*')
+            .eq('서버명', serverName)
+            .eq('캐릭터이름', characterName)
+            .single();
+
+        if (error) {
+            console.error('캐릭터 조회 오류:', error);
+            return null;
+        }
+
+        return data;
+    } catch (error) {
+        console.error('캐릭터 조회 예외:', error);
+        return null;
+    }
+}
+
+// 캐릭터의 장비 정보 조회 함수
+async function getCharacterEquipment(characterId) {
+    try {
+        const { data, error } = await supabase
+            .from('characters_items')
+            .select(`
+                *,
+                items_info (
+                    아이템이름,
+                    부위,
+                    등급,
+                    옵션명,
+                    값
+                )
+            `)
+            .eq('캐릭터아이디', characterId);
+
+        if (error) {
+            console.error('장비 조회 오류:', error);
+            return [];
+        }
+
+        return data || [];
+    } catch (error) {
+        console.error('장비 조회 예외:', error);
+        return [];
+    }
+}
+
+// 빌드 추천 조회 함수
+async function getBuildRecommendations(characterId, userRequest) {
+    try {
+        let query = supabase
+            .from('builds')
+            .select('*')
+            .eq('privacy', 'public')
+            .order('rating_average', { ascending: false });
+
+        if (userRequest.includes('공격') || userRequest.includes('딜') || userRequest.includes('dps')) {
+            query = query.contains('role_tags', ['dps']);
+        } else if (userRequest.includes('생존') || userRequest.includes('방어') || userRequest.includes('tank')) {
+            query = query.contains('role_tags', ['tank']);
+        } else if (userRequest.includes('지원') || userRequest.includes('힐') || userRequest.includes('support')) {
+            query = query.contains('role_tags', ['support']);
+        }
+
+        const { data, error } = await query.limit(5);
+
+        if (error) {
+            console.error('빌드 조회 오류:', error);
+            return [];
+        }
+
+        return data || [];
+    } catch (error) {
+        console.error('빌드 조회 예외:', error);
+        return [];
+    }
+}
+
+// 아이템 추천 조회 함수
+async function getItemRecommendations(characterId, userRequest) {
+    try {
+        let query = supabase
+            .from('items_info')
+            .select('*')
+            .order('값', { ascending: false });
+
+        if (userRequest.includes('무기')) {
+            query = query.eq('부위', '무기');
+        } else if (userRequest.includes('방어구')) {
+            query = query.in('부위', ['투구', '상의', '하의', '신발', '장갑']);
+        } else if (userRequest.includes('액세서리')) {
+            query = query.in('부위', ['목걸이', '반지', '팔찌', '벨트', '망토', '귀걸이']);
+        }
+
+        const { data, error } = await query.limit(10);
+
+        if (error) {
+            console.error('아이템 조회 오류:', error);
+            return [];
+        }
+
+        return data || [];
+    } catch (error) {
+        console.error('아이템 조회 예외:', error);
+        return [];
+    }
+}
+
 // 메인 페이지
 app.get('/', (req, res) => {
     res.send(`<!DOCTYPE html>
@@ -52,13 +142,19 @@ app.get('/', (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TL Build Recommendation System</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -67,12 +163,14 @@ app.get('/', (req, res) => {
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
         }
+
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
             padding: 30px;
             text-align: center;
         }
+
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
@@ -81,7 +179,16 @@ app.get('/', (req, res) => {
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .main-content { padding: 40px; }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
         .demo-section {
             background: #f8f9fa;
             border-radius: 15px;
@@ -89,7 +196,16 @@ app.get('/', (req, res) => {
             margin-bottom: 30px;
             border: 2px solid #e9ecef;
         }
-        .input-group { margin-bottom: 20px; }
+
+        .demo-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
         label {
             display: block;
             margin-bottom: 8px;
@@ -97,6 +213,7 @@ app.get('/', (req, res) => {
             color: #2c3e50;
             font-size: 1.1em;
         }
+
         input[type="text"], textarea {
             width: 100%;
             padding: 15px;
@@ -105,12 +222,18 @@ app.get('/', (req, res) => {
             font-size: 1.1em;
             transition: border-color 0.3s ease;
         }
+
         input[type="text"]:focus, textarea:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-        textarea { resize: vertical; min-height: 100px; }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
         .btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -123,10 +246,18 @@ app.get('/', (req, res) => {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             margin-right: 10px;
         }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .result-section {
             background: #e8f5e8;
             border-radius: 15px;
@@ -134,6 +265,42 @@ app.get('/', (req, res) => {
             margin-top: 30px;
             border: 2px solid #c3e6c3;
         }
+
+        .result-section h3 {
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #fcc;
+        }
+
         .success {
             background: #efe;
             color: #363;
@@ -141,12 +308,49 @@ app.get('/', (req, res) => {
             border-radius: 10px;
             border: 2px solid #cfc;
         }
+
+        .examples {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .examples h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .example-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .example-item:hover {
+            background: #e9ecef;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
         .server-selector {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 10px;
             margin-top: 10px;
         }
+
         .server-btn {
             background: white;
             border: 2px solid #ddd;
@@ -156,22 +360,17 @@ app.get('/', (req, res) => {
             transition: all 0.3s ease;
             font-weight: 600;
         }
+
         .server-btn:hover {
             background: #667eea;
             color: white;
             border-color: #667eea;
         }
+
         .server-btn.selected {
             background: #667eea;
             color: white;
             border-color: #667eea;
-        }
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
         }
     </style>
 </head>
@@ -224,6 +423,25 @@ app.get('/', (req, res) => {
                 <h3>🎯 맞춤형 추천 결과</h3>
                 <div id="recommendationContent"></div>
             </div>
+
+            <div class="examples">
+                <h3>💡 추천 요청 예시</h3>
+                <div class="example-item" onclick="setRequestExample('던전 클리어가 어려워, 공격력이 부족해')">
+                    "던전 클리어가 어려워, 공격력이 부족해"
+                </div>
+                <div class="example-item" onclick="setRequestExample('PvP에서 자꾸 죽어, 생존이 안돼')">
+                    "PvP에서 자꾸 죽어, 생존이 안돼"
+                </div>
+                <div class="example-item" onclick="setRequestExample('마나가 부족해서 스킬을 못써')">
+                    "마나가 부족해서 스킬을 못써"
+                </div>
+                <div class="example-item" onclick="setRequestExample('보스 레이드에서 딜링이 부족해')">
+                    "보스 레이드에서 딜링이 부족해"
+                </div>
+                <div class="example-item" onclick="setRequestExample('속도가 느려서 움직임이 답답해')">
+                    "속도가 느려서 움직임이 답답해"
+                </div>
+            </div>
         </div>
 
         <div class="footer">
@@ -237,7 +455,7 @@ app.get('/', (req, res) => {
 
         function selectServer(serverName) {
             document.getElementById('serverName').value = serverName;
-            document.querySelectorAll('.server-btn').forEach(function(btn){
+            document.querySelectorAll('.server-btn').forEach(btn => {
                 btn.classList.remove('selected');
             });
             event.target.classList.add('selected');
@@ -246,6 +464,7 @@ app.get('/', (req, res) => {
         async function loadCharacter() {
             const serverName = document.getElementById('serverName').value.trim();
             const characterName = document.getElementById('characterName').value.trim();
+            
             if (!serverName || !characterName) {
                 alert('서버명과 캐릭터명을 모두 입력해주세요!');
                 return;
@@ -253,49 +472,56 @@ app.get('/', (req, res) => {
 
             const characterInfo = document.getElementById('characterInfo');
             const characterDetails = document.getElementById('characterDetails');
+
+            // 로딩 상태
             characterInfo.style.display = 'block';
-            characterDetails.innerHTML = '<div style="text-align: center; padding: 20px;">캐릭터 정보를 조회하고 있습니다...</div>';
+            characterDetails.innerHTML = '<div class="loading"><div class="spinner"></div>캐릭터 정보를 조회하고 있습니다...</div>';
 
             try {
-                const resp = await fetch('/api/character', {
+                const response = await fetch('/api/character', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ serverName: serverName, characterName: characterName })
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        serverName: serverName,
+                        characterName: characterName
+                    })
                 });
-                const data = await resp.json();
-                if (!data.success) {
-                    characterDetails.innerHTML = '<div class="error">❌ ' + (data.message || '캐릭터 조회 실패') + '</div>';
-                    return;
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentCharacterId = data.characterId;
+                    currentCharacterData = data.characterData;
+                    
+                    // 캐릭터 기본 정보 표시
+                    characterDetails.innerHTML = \`
+                        <div class="success">
+                            <h4>✅ 캐릭터 정보 조회 성공!</h4>
+                            <p><strong>서버:</strong> \${data.characterData.server}</p>
+                            <p><strong>캐릭터명:</strong> \${data.characterData.name}</p>
+                            <p><strong>레벨:</strong> \${data.characterData.level}</p>
+                            <p><strong>클래스:</strong> \${data.characterData.class}</p>
+                            <p><strong>마지막 업데이트:</strong> \${new Date(data.characterData.lastUpdated).toLocaleString()}</p>
+                        </div>
+                    \`;
+                } else {
+                    characterDetails.innerHTML = \`
+                        <div class="error">
+                            <h4>❌ 캐릭터 조회 실패</h4>
+                            <p>\${data.error}</p>
+                        </div>
+                    \`;
                 }
-
-                currentCharacterId = data.character.캐릭터아이디;
-                currentCharacterData = { server: data.character.서버명, name: data.character.캐릭터이름 };
-
-                var html = ''
-                    + '<div class="success">'
-                    +   '<h4>✅ 캐릭터 정보 조회 성공!</h4>'
-                    +   '<p><strong>서버:</strong> ' + (data.character.서버명 || '') + '</p>'
-                    +   '<p><strong>캐릭터명:</strong> ' + data.character.캐릭터이름 + '</p>'
-                    +   '<p><strong>레벨:</strong> ' + (data.character.레벨 || '') + '</p>'
-                    +   '<p><strong>클래스:</strong> ' + (data.character.클래스 || '') + '</p>'
-                    + '</div>'
-                    + '<div style="margin-top: 20px;">'
-                    +   '<h4>⚔️ 현재 장비</h4>'
-                    +   '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">'
-                    +     data.equipment.map(function(item){
-                            return '<div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">'
-                                 +   '<div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">' + item.부위 + '</div>'
-                                 +   '<div style="color: #e74c3c; font-weight: 600; margin-bottom: 5px;">' + item.아이템이름 + '</div>'
-                                 +   '<div style="color: #7f8c8d; font-size: 0.9em;">등급 ' + item.등급 + '</div>'
-                                 +   '<div style="font-size: 0.8em; color: #555;">' + (item.옵션명 || '') + ': ' + (item.값 || '') + '</div>'
-                                 + '</div>';
-                        }).join('')
-                    +   '</div>'
-                    + '</div>';
-
-                characterDetails.innerHTML = html;
-            } catch (e) {
-                characterDetails.innerHTML = '<div class="error">❌ ' + (e.message || '오류') + '</div>';
+                
+            } catch (error) {
+                characterDetails.innerHTML = \`
+                    <div class="error">
+                        <h4>❌ 캐릭터 조회 실패</h4>
+                        <p>오류가 발생했습니다. 다시 시도해주세요.</p>
+                    </div>
+                \`;
             }
         }
 
@@ -314,35 +540,72 @@ app.get('/', (req, res) => {
             const recommendationResult = document.getElementById('recommendationResult');
             const recommendationContent = document.getElementById('recommendationContent');
 
+            // 로딩 상태
             recommendationResult.style.display = 'block';
-            recommendationContent.innerHTML = '<div style="text-align: center; padding: 20px;">AI가 데이터베이스와 LLM을 사용해 추천을 생성하고 있습니다...</div>';
+            recommendationContent.innerHTML = '<div class="loading"><div class="spinner"></div>캐릭터 정보를 분석하고 맞춤형 추천을 생성하고 있습니다...</div>';
 
             try {
-                const resp = await fetch('/api/llm-recommend', {
+                const response = await fetch('/api/character-recommend', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ userQuery: userRequest, characterInfo: currentCharacterData })
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        characterId: currentCharacterId,
+                        userRequest: userRequest
+                    })
                 });
-                const data = await resp.json();
-                if (!data.success && !data.fallback) {
-                    throw new Error(data.message || '추천 실패');
-                }
-                if (data.fallback) {
-                    recommendationContent.innerHTML = '<div class="error">LLM 호출 실패. 나중에 다시 시도해주세요.</div>';
-                    return;
-                }
 
-                var recHtml = ''
-                    + '<div class="success">'
-                    +   '<h4>🤖 AI 추천 결과</h4>'
-                    +   '<div style="white-space: pre-wrap; line-height: 1.6;">' + (data.recommendation || '') + '</div>'
-                    +   '<div style="margin-top:10px;color:#555;">분석된 아이템 수: ' + (data.db_items_count || 0) + '개</div>'
-                    + '</div>';
+                const data = await response.json();
 
-                recommendationContent.innerHTML = recHtml;
-            } catch (e) {
-                recommendationContent.innerHTML = '<div class="error">❌ ' + (e.message || '오류') + '</div>';
+                if (data.success) {
+                    const recommendations = data.recommendations || [];
+                    const totalImprovement = data.improvementAnalysis?.totalImprovement || 0;
+
+                    recommendationContent.innerHTML = \`
+                        <div class="success">
+                            <h4>✅ 맞춤형 추천 완료!</h4>
+                            <p><strong>분석된 문제점:</strong> \${recommendations.length}개 슬롯 개선 필요</p>
+                            <p><strong>추천 아이템:</strong> \${recommendations.length}개</p>
+                            <p><strong>총 개선 효과:</strong> \${totalImprovement}점 향상</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <h4>🎯 추천 아이템 목록</h4>
+                            \${recommendations.map(rec => \`
+                                <div style="background: white; border-radius: 10px; padding: 20px; margin-bottom: 15px; border: 1px solid #ddd;">
+                                    <div style="font-size: 1.1em; font-weight: 600; color: #2c3e50; margin-bottom: 10px;">\${rec.slot} 슬롯</div>
+                                    <div style="color: #e74c3c; font-weight: 600; margin-bottom: 10px;">
+                                        \${rec.currentItem} → \${rec.recommendedItem}
+                                    </div>
+                                    <div style="color: #27ae60; font-weight: 600;">
+                                        개선 효과: +\${rec.improvement}점 향상
+                                    </div>
+                                </div>
+                            \`).join('')}
+                        </div>
+                    \`;
+                } else {
+                    recommendationContent.innerHTML = \`
+                        <div class="error">
+                            <h4>❌ 추천 생성 실패</h4>
+                            <p>\${data.error}</p>
+                        </div>
+                    \`;
+                }
+                
+            } catch (error) {
+                recommendationContent.innerHTML = \`
+                    <div class="error">
+                        <h4>❌ 추천 생성 실패</h4>
+                        <p>오류가 발생했습니다. 다시 시도해주세요.</p>
+                    </div>
+                \`;
             }
+        }
+
+        function setRequestExample(text) {
+            document.getElementById('userRequest').value = text;
         }
 
         function clearCharacter() {
@@ -353,17 +616,20 @@ app.get('/', (req, res) => {
             document.getElementById('recommendationResult').style.display = 'none';
             currentCharacterId = null;
             currentCharacterData = null;
-            document.querySelectorAll('.server-btn').forEach(function(btn){
+            
+            document.querySelectorAll('.server-btn').forEach(btn => {
                 btn.classList.remove('selected');
             });
         }
 
+        // Enter 키로 캐릭터 조회
         document.getElementById('characterName').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 loadCharacter();
             }
         });
 
+        // Enter 키로 추천 요청
         document.getElementById('userRequest').addEventListener('keypress', function(e) {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -375,112 +641,122 @@ app.get('/', (req, res) => {
 </html>`);
 });
 
-// 캐릭터 + 착용장비 조회 API (DB 연동)
+// API 엔드포인트들
 app.post('/api/character', async (req, res) => {
-    try {
-        const { serverName, characterName } = req.body || {};
-        if (!characterName || !serverName) {
-            return res.status(400).json({ success: false, message: '서버명과 캐릭터명을 모두 입력해주세요.' });
-        }
-
-        const rows = await queryDB(
-            'SELECT * FROM characters WHERE 캐릭터이름 = ? AND 서버명 = ?',
-            [characterName, serverName]
-        );
-
-        if (rows.length === 0) {
-            return res.json({ success: false, message: '해당 캐릭터를 찾을 수 없습니다.' });
-        }
-
-        const character = rows[0];
-        const equipment = await queryDB(
-            `SELECT ci.부위, i.아이템이름, i.등급, i.옵션명, i.값
-             FROM characters_items ci
-             JOIN items_info i ON i.아이템아이디 = ci.아이템아이디
-             WHERE ci.캐릭터아이디 = ?
-             ORDER BY FIELD(ci.부위,'무기','투구','상의','하의','장갑','신발','목걸이','반지','허리띠','망토')`,
-            [character.캐릭터아이디]
-        );
-
-        res.json({ success: true, character, equipment });
-    } catch (e) {
-        console.error('[/api/character] error:', {
-            message: e && e.message ? e.message : String(e),
-            code: e && e.code ? e.code : undefined,
-            dbHost: DB_HOST,
-            dbName: DB_NAME
+    const { serverName, characterName } = req.body;
+    
+    if (!serverName || !characterName) {
+        return res.json({
+            success: false,
+            error: '서버명과 캐릭터명이 필요합니다.'
         });
-        res.status(500).json({ success: false, message: '캐릭터 조회 실패', error: (e && e.message) ? e.message : String(e) });
     }
-});
 
-// 간단한 헬스체크 및 DB 연결 확인용 엔드포인트
-app.get('/api/health', async (req, res) => {
     try {
-        const rows = await queryDB('SELECT 1 as ok');
-        res.json({ ok: true, db: rows && rows[0] && rows[0].ok === 1, host: DB_HOST, dbName: DB_NAME });
-    } catch (e) {
-        res.status(500).json({ ok: false, error: (e && e.message) ? e.message : String(e), host: DB_HOST, dbName: DB_NAME });
-    }
-});
-
-// VLLM 기반 추천 API (DB + LLM 연동)
-app.post('/api/llm-recommend', async (req, res) => {
-    try {
-        const { userQuery, characterInfo } = req.body || {};
-        if (!userQuery) {
-            return res.status(400).json({ success: false, message: '추천 요청이 비어있습니다.' });
+        // Supabase에서 캐릭터 정보 조회
+        const character = await getCharacter(serverName, characterName);
+        
+        if (!character) {
+            return res.json({
+                success: false,
+                error: '캐릭터를 찾을 수 없습니다.'
+            });
         }
 
-        let sql = 'SELECT * FROM items_info WHERE 1=1';
-        const params = [];
-        if (userQuery.includes('영웅')) { sql += ' AND 등급 = ?'; params.push('영웅'); }
-        if (userQuery.includes('무기')) { sql += ' AND 부위 = ?'; params.push('무기'); }
-        if (userQuery.includes('방어구')) { sql += ' AND 부위 IN (?,?,?,?,?)'; params.push('투구','상의','하의','장갑','신발'); }
-        sql += ' ORDER BY 값 DESC LIMIT 20';
-        const items = await queryDB(sql, params);
+        // 캐릭터의 장비 정보 조회
+        const equipment = await getCharacterEquipment(character.캐릭터아이디);
 
-        const llmResp = await axios.post(
-            `${VLLM_API_URL}/chat/completions`,
-            {
-                model: 'deepseek-coder-7b',
-                messages: [
-                    {
-                        role: 'system',
-                        content:
-`당신은 Throne and Liberty 빌드 추천 전문가입니다.
-아래 데이터베이스 아이템 정보를 바탕으로, 사용자의 상황과 캐릭터 장비/스탯을 고려해 적합한 아이템을 추천하세요.
-추천 이유를 짧고 명확히 설명하세요. 모르면 '정보 부족'이라고 답변하세요.
-
-[DB 아이템 Top N]
-${JSON.stringify(items, null, 2)}
-
-[캐릭터 정보]
-${JSON.stringify(characterInfo || {}, null, 2)}`
-                    },
-                    { role: 'user', content: userQuery }
-                ],
-                temperature: 0.1,
-                max_tokens: 512
-            },
-            { headers: { Authorization: `Bearer ${VLLM_API_KEY}` }, timeout: 30000 }
-        );
-
-        const text = llmResp.data?.choices?.[0]?.message?.content || '(빈 응답)';
-        res.json({ success: true, recommendation: text, db_items_count: items.length });
-    } catch (e) {
-        console.error('[/api/llm-recommend] error:', e?.response?.data || e);
-        res.status(500).json({ success: false, message: 'LLM 추천 실패', error: String(e), fallback: true });
+        res.json({
+            success: true,
+            characterId: character.캐릭터아이디,
+            characterData: {
+                server: character.서버명,
+                name: character.캐릭터이름,
+                level: character.레벨,
+                class: character.클래스,
+                equipment: equipment.map(item => ({
+                    slot: item.부위,
+                    itemName: item.items_info?.아이템이름 || '알 수 없음',
+                    grade: item.items_info?.등급 || '일반',
+                    option: item.items_info?.옵션명 || '',
+                    value: item.items_info?.값 || 0
+                })),
+                lastUpdated: character.생성일
+            }
+        });
+    } catch (error) {
+        console.error('캐릭터 조회 오류:', error);
+        res.json({
+            success: false,
+            error: '캐릭터 조회 중 오류가 발생했습니다.'
+        });
     }
 });
 
-// 헬스 체크
+app.post('/api/character-recommend', async (req, res) => {
+    const { characterId, userRequest } = req.body;
+    
+    if (!characterId || !userRequest) {
+        return res.json({
+            success: false,
+            error: '캐릭터 ID와 요청사항이 필요합니다.'
+        });
+    }
+
+    try {
+        // Supabase에서 빌드 추천 조회
+        const buildRecommendations = await getBuildRecommendations(characterId, userRequest);
+        
+        // Supabase에서 아이템 추천 조회
+        const itemRecommendations = await getItemRecommendations(characterId, userRequest);
+
+        // 추천 결과 포맷팅
+        const recommendations = itemRecommendations.slice(0, 5).map(item => ({
+            slot: item.부위,
+            currentItem: '현재 장비',
+            currentGrade: 1,
+            recommendedItem: item.아이템이름,
+            improvement: Math.floor(item.값 || 0),
+            grade: item.등급,
+            option: item.옵션명
+        }));
+
+        const totalImprovement = recommendations.reduce((sum, rec) => sum + rec.improvement, 0);
+
+        res.json({
+            success: true,
+            characterId: characterId,
+            currentEquipment: [],
+            currentStats: [],
+            equipmentAnalysis: {
+                weakestSlots: recommendations
+            },
+            recommendations: recommendations,
+            buildRecommendations: buildRecommendations,
+            improvementAnalysis: {
+                totalImprovement: totalImprovement,
+                costSavings: recommendations.reduce((sum, rec) => sum + rec.currentGrade * 1000, 0),
+                recommendationCount: recommendations.length,
+                summary: `${recommendations.length}개 아이템 추천으로 총 ${totalImprovement}점 향상`
+            }
+        });
+    } catch (error) {
+        console.error('추천 조회 오류:', error);
+        res.json({
+            success: false,
+            error: '추천 조회 중 오류가 발생했습니다.'
+        });
+    }
+});
+
+// 헬스 체크 엔드포인트
 app.get('/health', (req, res) => {
-    res.json({
-        status: 'ok',
+    res.json({ 
+        status: 'ok', 
         timestamp: new Date().toISOString(),
         uptime: process.uptime()
     });
 });
 
+// Vercel 서버리스 함수로 내보내기
 module.exports = app;
