@@ -15,6 +15,7 @@ class LLMClient {
 
     async generateRecommendation(characterData, userRequest, recommendations) {
         try {
+            // 외부 LLM 서버 연결 시도
             const prompt = this.buildRecommendationPrompt(characterData, userRequest, recommendations);
             
             const response = await axios.post(`${this.apiBase}/chat/completions`, {
@@ -49,14 +50,56 @@ class LLMClient {
                     'Authorization': `Bearer ${this.apiKey}`,
                     'Content-Type': 'application/json'
                 },
-                timeout: 30000 // 30초 타임아웃
+                timeout: 10000 // 10초 타임아웃으로 단축
             });
 
             return response.data.choices[0].message.content;
         } catch (error) {
             console.error('LLM API 오류:', error);
-            throw new Error('LLM 추천 생성 중 오류가 발생했습니다.');
+            
+            // LLM 서버 연결 실패 시 로컬 분석으로 대체
+            return this.generateLocalRecommendation(characterData, userRequest, recommendations);
         }
+    }
+
+    // 로컬 분석 함수 (LLM 서버 연결 실패 시 사용)
+    generateLocalRecommendation(characterData, userRequest, recommendations) {
+        const characterClass = characterData.class;
+        const characterLevel = characterData.level;
+        const equipmentCount = characterData.equipment.length;
+        
+        let analysis = `📊 캐릭터 분석 결과\n\n`;
+        analysis += `• 캐릭터: ${characterData.name} (${characterClass}, Lv.${characterLevel})\n`;
+        analysis += `• 현재 장비: ${equipmentCount}개 착용\n`;
+        analysis += `• 요청사항: ${userRequest}\n\n`;
+        
+        analysis += `🎯 개선 방안\n\n`;
+        
+        if (userRequest.includes('공격') || userRequest.includes('딜')) {
+            analysis += `• 공격력 향상을 위해 무기와 액세서리 업그레이드 권장\n`;
+            analysis += `• 현재 무기: ${characterData.equipment.find(e => e.slot === '무기')?.itemName || '미착용'}\n`;
+            analysis += `• 추천 무기: 더 높은 등급의 무기로 교체\n\n`;
+        }
+        
+        if (userRequest.includes('생존') || userRequest.includes('방어')) {
+            analysis += `• 생존력 향상을 위해 방어구 강화 권장\n`;
+            analysis += `• 방어구 세트 효과 확인 필요\n`;
+            analysis += `• 체력 관련 옵션 아이템 우선 고려\n\n`;
+        }
+        
+        if (userRequest.includes('마나') || userRequest.includes('스킬')) {
+            analysis += `• 마나 관리 개선을 위한 아이템 옵션 확인\n`;
+            analysis += `• 스킬 쿨다운 감소 옵션 아이템 추천\n`;
+            analysis += `• 마나 재생 관련 액세서리 고려\n\n`;
+        }
+        
+        analysis += `💡 구체적 실행 방안\n`;
+        analysis += `1. 추천된 ${recommendations.length}개 아이템 중 우선순위별로 교체\n`;
+        analysis += `2. 각 아이템의 옵션 효과를 캐릭터 빌드에 맞게 조정\n`;
+        analysis += `3. 아이템 강화를 통한 추가 스탯 향상 고려\n`;
+        analysis += `4. 정기적인 장비 점검으로 최적화 유지\n`;
+        
+        return analysis;
     }
 
     buildRecommendationPrompt(characterData, userRequest, recommendations) {
