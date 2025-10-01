@@ -80,22 +80,31 @@ class GroqLLMClient {
         ).join('\n');
 
         return `
-캐릭터 정보:
-- 서버: ${characterData.server}
-- 이름: ${characterData.name}
-- 레벨: ${characterData.level}
-- 클래스: ${characterData.class}
+=== Throne and Liberty 빌드 분석 ===
 
-현재 장비:
-${equipmentList}
+📊 캐릭터 정보:
+- 서버: ${characterData.server || '알 수 없음'}
+- 이름: ${characterData.name || '알 수 없음'}
+- 레벨: ${characterData.level || '알 수 없음'}
+- 클래스: ${characterData.class || '알 수 없음'}
 
-사용자 요청: ${userRequest}
+⚔️ 현재 장비 상태:
+${equipmentList || '현재 장비 정보가 없습니다.'}
 
-추천 아이템:
-${recommendationList}
+🎯 사용자 요청사항: ${userRequest}
 
-위 정보를 바탕으로 캐릭터의 현재 상태를 분석하고, 사용자의 요청사항에 맞는 구체적인 개선 방안을 제시해주세요.
-특히 현재 장비와 추천 아이템의 차이점과 예상되는 개선 효과를 수치적으로 설명해주세요.
+💡 추천 아이템 목록:
+${recommendationList || '추천 아이템이 없습니다.'}
+
+📈 분석 요청:
+위의 실제 게임 데이터를 바탕으로 다음을 분석해주세요:
+1. 현재 장비의 강점과 약점
+2. 추천 아이템이 왜 필요한지 구체적 이유
+3. 각 아이템의 예상 개선 효과
+4. 우선순위별 교체 계획
+5. 추가로 고려해야 할 사항
+
+실제 게임 데이터를 기반으로 구체적이고 실용적인 조언을 해주세요.
         `;
     }
 

@@ -73,26 +73,47 @@ module.exports = async (req, res) => {
 
         const totalImprovement = recommendations.reduce((sum, rec) => sum + rec.improvement, 0);
 
-        // 캐릭터 정보 조회 (LLM 분석용)
+        // 캐릭터 정보 조회 (LLM 분석용) - RAG 구조
         const { getCharacter, getCharacterEquipment } = require('./characters');
         
-        // 요청에서 캐릭터 정보 추출 (실제 구현에서는 characterId로 조회)
         let character = null;
         let characterEquipment = [];
         
-        // 임시로 첫 번째 캐릭터 사용 (실제로는 characterId로 조회해야 함)
+        // 실제 characterId로 캐릭터 조회
         try {
-            const { data: characters } = await require('./supabase')
+            console.log('캐릭터 조회 시작, characterId:', characterId);
+            
+            // characterId로 정확한 캐릭터 조회
+            const { data: characterData, error: charError } = await require('./supabase')
                 .from('characters')
                 .select('*')
-                .limit(1);
+                .eq('캐릭터아이디', characterId)
+                .single();
             
-            if (characters && characters.length > 0) {
-                character = characters[0];
+            if (charError) {
+                console.error('캐릭터 조회 오류:', charError);
+                // 캐릭터가 없으면 첫 번째 캐릭터 사용 (fallback)
+                const { data: fallbackCharacters } = await require('./supabase')
+                    .from('characters')
+                    .select('*')
+                    .limit(1);
+                
+                if (fallbackCharacters && fallbackCharacters.length > 0) {
+                    character = fallbackCharacters[0];
+                    console.log('Fallback 캐릭터 사용:', character.캐릭터이름);
+                }
+            } else {
+                character = characterData;
+                console.log('캐릭터 조회 성공:', character.캐릭터이름);
+            }
+            
+            // 캐릭터 장비 정보 조회
+            if (character) {
                 characterEquipment = await getCharacterEquipment(character.캐릭터아이디);
+                console.log('장비 조회 완료, 장비 수:', characterEquipment.length);
             }
         } catch (error) {
-            console.error('캐릭터 조회 오류:', error);
+            console.error('캐릭터/장비 조회 오류:', error);
         }
 
         const characterData = character ? {
