@@ -6,8 +6,11 @@ const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
 
 class GroqLLMClient {
     async generateRecommendation(characterData, userRequest, recommendations) {
-        // API 키 확인
-        if (!GROQ_API_KEY || GROQ_API_KEY === 'your-groq-api-key') {
+        // API 키 확인 및 디버깅
+        console.log('GROQ_API_KEY 확인:', GROQ_API_KEY ? '설정됨' : '설정되지 않음');
+        console.log('GROQ_MODEL 확인:', GROQ_MODEL);
+        
+        if (!GROQ_API_KEY || GROQ_API_KEY === 'your-groq-api-key' || GROQ_API_KEY === 'gsk_test_key_placeholder') {
             console.log('Groq API 키가 설정되지 않음, 로컬 분석 사용');
             return this.generateLocalRecommendation(characterData, userRequest, recommendations);
         }
