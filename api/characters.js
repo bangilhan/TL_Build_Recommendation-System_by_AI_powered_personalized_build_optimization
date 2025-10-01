@@ -55,29 +55,45 @@ async function getCharacterEquipment(characterId) {
 async function getBuildRecommendations(characterId, userRequest) {
     try {
         // 사용자 요청에 따른 빌드 필터링
+        // JSON 연산자 문제를 피하기 위해 간단한 조회로 변경
         let query = supabase
             .from('builds')
             .select('*')
             .eq('privacy', 'public')
-            .order('rating_average', { ascending: false });
+            .order('rating_average', { ascending: false })
+            .limit(10);
 
-        // 역할 태그로 필터링 (예: dps, tank, support)
-        if (userRequest.includes('공격') || userRequest.includes('딜') || userRequest.includes('dps')) {
-            query = query.contains('role_tags', ['dps']);
-        } else if (userRequest.includes('생존') || userRequest.includes('방어') || userRequest.includes('tank')) {
-            query = query.contains('role_tags', ['tank']);
-        } else if (userRequest.includes('지원') || userRequest.includes('힐') || userRequest.includes('support')) {
-            query = query.contains('role_tags', ['support']);
-        }
-
-        const { data, error } = await query.limit(5);
+        const { data, error } = await query;
 
         if (error) {
             console.error('빌드 조회 오류:', error);
             return [];
         }
 
-        return data || [];
+        // 클라이언트 사이드에서 필터링
+        let filteredData = data || [];
+        
+        if (userRequest.includes('공격') || userRequest.includes('딜') || userRequest.includes('dps')) {
+            filteredData = filteredData.filter(build => 
+                build.role_tags && 
+                Array.isArray(build.role_tags) && 
+                build.role_tags.includes('dps')
+            );
+        } else if (userRequest.includes('생존') || userRequest.includes('방어') || userRequest.includes('tank')) {
+            filteredData = filteredData.filter(build => 
+                build.role_tags && 
+                Array.isArray(build.role_tags) && 
+                build.role_tags.includes('tank')
+            );
+        } else if (userRequest.includes('지원') || userRequest.includes('힐') || userRequest.includes('support')) {
+            filteredData = filteredData.filter(build => 
+                build.role_tags && 
+                Array.isArray(build.role_tags) && 
+                build.role_tags.includes('support')
+            );
+        }
+
+        return filteredData.slice(0, 5);
     } catch (error) {
         console.error('빌드 조회 예외:', error);
         return [];
