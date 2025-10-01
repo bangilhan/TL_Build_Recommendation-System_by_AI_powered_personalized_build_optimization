@@ -1,5 +1,5 @@
 const { getBuildRecommendations, getItemRecommendations } = require('./characters');
-const llmClient = require('./llm');
+const llmClient = require('./llm-groq');
 
 module.exports = async (req, res) => {
     // CORS 설정

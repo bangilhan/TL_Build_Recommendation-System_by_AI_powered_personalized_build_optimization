@@ -30,8 +30,7 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "LLM_API_BASE": "http://172.20.92.48:30410/v1",
-    "LLM_API_KEY": "sk-local",
-    "LLM_MODEL": "Qwen2.5-72B"
+    "GROQ_API_KEY": "your-groq-api-key",
+    "GROQ_MODEL": "llama-3.1-8b-instant"
   }
 }
