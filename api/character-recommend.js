@@ -81,30 +81,43 @@ module.exports = async (req, res) => {
         
         // 실제 characterId로 캐릭터 조회
         try {
-            console.log('캐릭터 조회 시작, characterId:', characterId);
+            console.log('캐릭터 조회 시작, characterId:', characterId, 'type:', typeof characterId);
+            
+            // characterId가 숫자인지 확인하고 변환
+            let searchId = characterId;
+            if (typeof characterId === 'string' && !isNaN(characterId)) {
+                searchId = parseInt(characterId);
+                console.log('characterId를 숫자로 변환:', searchId);
+            }
             
             // characterId로 정확한 캐릭터 조회
             const { data: characterData, error: charError } = await require('./supabase')
                 .from('characters')
                 .select('*')
-                .eq('캐릭터아이디', characterId)
+                .eq('캐릭터아이디', searchId)
                 .single();
             
             if (charError) {
                 console.error('캐릭터 조회 오류:', charError);
+                console.log('Fallback으로 첫 번째 캐릭터 조회 시도...');
+                
                 // 캐릭터가 없으면 첫 번째 캐릭터 사용 (fallback)
-                const { data: fallbackCharacters } = await require('./supabase')
+                const { data: fallbackCharacters, error: fallbackError } = await require('./supabase')
                     .from('characters')
                     .select('*')
                     .limit(1);
                 
-                if (fallbackCharacters && fallbackCharacters.length > 0) {
+                if (fallbackError) {
+                    console.error('Fallback 캐릭터 조회 오류:', fallbackError);
+                } else if (fallbackCharacters && fallbackCharacters.length > 0) {
                     character = fallbackCharacters[0];
-                    console.log('Fallback 캐릭터 사용:', character.캐릭터이름);
+                    console.log('Fallback 캐릭터 사용:', character.캐릭터이름, 'ID:', character.캐릭터아이디);
+                } else {
+                    console.log('데이터베이스에 캐릭터가 없습니다.');
                 }
             } else {
                 character = characterData;
-                console.log('캐릭터 조회 성공:', character.캐릭터이름);
+                console.log('캐릭터 조회 성공:', character.캐릭터이름, 'ID:', character.캐릭터아이디);
             }
             
             // 캐릭터 장비 정보 조회

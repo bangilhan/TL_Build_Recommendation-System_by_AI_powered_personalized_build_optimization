@@ -526,6 +526,8 @@ app.get('/', (req, res) => {
         }
 
         async function getRecommendation() {
+            console.log('getRecommendation 호출, currentCharacterId:', currentCharacterId);
+            
             if (!currentCharacterId) {
                 alert('먼저 캐릭터 정보를 조회해주세요!');
                 return;
@@ -536,6 +538,8 @@ app.get('/', (req, res) => {
                 alert('추천 요청사항을 입력해주세요!');
                 return;
             }
+            
+            console.log('추천 요청 전송:', { characterId: currentCharacterId, userRequest: userRequest });
 
             const recommendationResult = document.getElementById('recommendationResult');
             const recommendationContent = document.getElementById('recommendationContent');
