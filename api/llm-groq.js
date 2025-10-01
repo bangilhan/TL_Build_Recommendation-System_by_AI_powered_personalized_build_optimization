@@ -19,7 +19,13 @@ class GroqLLMClient {
         console.log('GROQ_MODEL 변수:', GROQ_MODEL);
         console.log('========================');
         
-        if (!GROQ_API_KEY || GROQ_API_KEY === 'your-groq-api-key' || GROQ_API_KEY === 'gsk_test_key_placeholder') {
+        // 환경 변수 문제 해결을 위한 임시 테스트
+        const testApiKey = 'gsk_10Kz6S6z4YBrEYJnWgp7WGdyb3FYY';
+        const finalApiKey = GROQ_API_KEY && GROQ_API_KEY !== 'your-groq-api-key' ? GROQ_API_KEY : testApiKey;
+        
+        console.log('사용할 API 키:', finalApiKey ? '설정됨' : '설정되지 않음');
+        
+        if (!finalApiKey) {
             console.log('Groq API 키가 설정되지 않음, 로컬 분석 사용');
             return this.generateLocalRecommendation(characterData, userRequest, recommendations);
         }
@@ -56,13 +62,13 @@ class GroqLLMClient {
                 ],
                 temperature: 0.1,
                 max_tokens: 1000
-            }, {
-                headers: {
-                    'Authorization': `Bearer ${GROQ_API_KEY}`,
-                    'Content-Type': 'application/json'
-                },
-                timeout: 10000
-            });
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${finalApiKey}`,
+                        'Content-Type': 'application/json'
+                    },
+                    timeout: 10000
+                });
 
             console.log('Groq API 응답 성공');
             return response.data.choices[0].message.content;
