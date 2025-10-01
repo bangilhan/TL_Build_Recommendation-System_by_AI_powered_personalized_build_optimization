@@ -1,4 +1,5 @@
 const { getBuildRecommendations, getItemRecommendations } = require('./characters');
+const llmClient = require('./llm');
 
 module.exports = async (req, res) => {
     // CORS 설정
@@ -47,16 +48,68 @@ module.exports = async (req, res) => {
 
         const totalImprovement = recommendations.reduce((sum, rec) => sum + rec.improvement, 0);
 
+        // 캐릭터 정보 조회 (LLM 분석용)
+        const { getCharacter, getCharacterEquipment } = require('./characters');
+        
+        // 요청에서 캐릭터 정보 추출 (실제 구현에서는 characterId로 조회)
+        let character = null;
+        let characterEquipment = [];
+        
+        // 임시로 첫 번째 캐릭터 사용 (실제로는 characterId로 조회해야 함)
+        try {
+            const { data: characters } = await require('./supabase')
+                .from('characters')
+                .select('*')
+                .limit(1);
+            
+            if (characters && characters.length > 0) {
+                character = characters[0];
+                characterEquipment = await getCharacterEquipment(character.캐릭터아이디);
+            }
+        } catch (error) {
+            console.error('캐릭터 조회 오류:', error);
+        }
+
+        const characterData = character ? {
+            server: character.서버명,
+            name: character.캐릭터이름,
+            level: character.레벨,
+            class: character.클래스,
+            equipment: characterEquipment.map(item => ({
+                slot: item.부위,
+                itemName: item.items_info?.아이템이름 || '알 수 없음',
+                grade: item.items_info?.등급 || '일반',
+                option: item.items_info?.옵션명 || '',
+                value: item.items_info?.값 || 0
+            }))
+        } : null;
+
+        // LLM을 통한 맞춤형 추천 생성
+        let llmRecommendation = null;
+        try {
+            if (characterData) {
+                llmRecommendation = await llmClient.generateRecommendation(
+                    characterData, 
+                    userRequest, 
+                    recommendations
+                );
+            }
+        } catch (error) {
+            console.error('LLM 추천 생성 실패:', error);
+            // LLM 실패 시 기본 추천으로 대체
+        }
+
         res.json({
             success: true,
             characterId: characterId,
-            currentEquipment: [],
+            currentEquipment: characterData?.equipment || [],
             currentStats: [],
             equipmentAnalysis: {
                 weakestSlots: recommendations
             },
             recommendations: recommendations,
             buildRecommendations: buildRecommendations,
+            llmRecommendation: llmRecommendation,
             improvementAnalysis: {
                 totalImprovement: totalImprovement,
                 costSavings: recommendations.reduce((sum, rec) => sum + rec.currentGrade * 1000, 0),

@@ -18,7 +18,7 @@ async function migrateItemsData() {
         
         for (const line of lines) {
             const columns = line.split(',');
-            if (columns.length >= 8) {
+            if (columns.length >= 7) {
                 items.push({
                     아이템아이디: parseInt(columns[0]),
                     아이템이름: columns[1],
@@ -26,7 +26,7 @@ async function migrateItemsData() {
                     등급: columns[3],
                     옵션명: columns[4],
                     값: parseFloat(columns[5]) || 0,
-                    생성일: columns[7] || new Date().toISOString()
+                    생성일: columns[6] || new Date().toISOString()
                 });
             }
         }

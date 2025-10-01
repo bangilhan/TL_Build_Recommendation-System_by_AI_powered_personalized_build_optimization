@@ -562,14 +562,28 @@ app.get('/', (req, res) => {
                     const recommendations = data.recommendations || [];
                     const totalImprovement = data.improvementAnalysis?.totalImprovement || 0;
 
-                    recommendationContent.innerHTML = \`
+                    let content = \`
                         <div class="success">
                             <h4>✅ 맞춤형 추천 완료!</h4>
                             <p><strong>분석된 문제점:</strong> \${recommendations.length}개 슬롯 개선 필요</p>
                             <p><strong>추천 아이템:</strong> \${recommendations.length}개</p>
                             <p><strong>총 개선 효과:</strong> \${totalImprovement}점 향상</p>
                         </div>
-                        
+                    \`;
+
+                    // LLM 추천이 있는 경우 표시
+                    if (data.llmRecommendation) {
+                        content += \`
+                            <div style="margin-top: 20px; background: #f0f8ff; border-radius: 10px; padding: 20px; border: 2px solid #4a90e2;">
+                                <h4>🤖 AI 전문가 분석</h4>
+                                <div style="white-space: pre-line; line-height: 1.6; color: #2c3e50;">
+                                    \${data.llmRecommendation}
+                                </div>
+                            </div>
+                        \`;
+                    }
+
+                    content += \`
                         <div style="margin-top: 20px;">
                             <h4>🎯 추천 아이템 목록</h4>
                             \${recommendations.map(rec => \`
@@ -585,6 +599,8 @@ app.get('/', (req, res) => {
                             \`).join('')}
                         </div>
                     \`;
+
+                    recommendationContent.innerHTML = content;
                 } else {
                     recommendationContent.innerHTML = \`
                         <div class="error">
