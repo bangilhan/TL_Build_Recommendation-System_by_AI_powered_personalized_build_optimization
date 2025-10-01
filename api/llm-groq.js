@@ -1,6 +1,11 @@
 const axios = require('axios');
 
 // Groq API 설정 (빠르고 무료 크레딧 제공)
+console.log('=== 환경 변수 로딩 시점 ===');
+console.log('process.env.GROQ_API_KEY:', process.env.GROQ_API_KEY);
+console.log('process.env.GROQ_MODEL:', process.env.GROQ_MODEL);
+console.log('========================');
+
 const GROQ_API_KEY = process.env.GROQ_API_KEY || 'your-groq-api-key';
 const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
 
